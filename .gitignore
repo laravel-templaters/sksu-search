@@ -3,6 +3,9 @@
 /public/storage
 /storage/*.key
 /vendor
+/vendor/*
+/vendor/laravel
+!/vendor/laravel/jetstream
 .env
 .env.backup
 .phpunit.result.cache
