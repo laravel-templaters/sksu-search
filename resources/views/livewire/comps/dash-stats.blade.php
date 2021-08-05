@@ -98,7 +98,7 @@
                         Request</p>
                 </dt>
                 <dd class="mx-auto pb-6 pt-3 items-center">
-                    <p class="text-2xl text-center font-semibold ">
+                    <p class="text-2xl text-center mt-8 font-semibold ">
                         71,897
                     </p>
                 </dd>
@@ -110,7 +110,7 @@
                         Request</p>
                 </dt>
                 <dd class="mx-auto pb-6 pt-3 items-center">
-                    <p class="text-2xl text-center font-semibold ">
+                    <p class="text-2xl text-center mt-8 font-semibold ">
                         71,897
                     </p>
                 </dd>

@@ -128,11 +128,11 @@
           <a href="#" class="flex-shrink-0 group block">
             <div class="flex items-center">
               <div>
-                <img class="inline-block h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                <img class="inline-block h-10 w-10 rounded-full" src="{{url('storage/'.Auth::user()->profile_photo_path) }}" alt="">
               </div>
               <div class="ml-3">
                 <p class="text-base font-medium text-white">
-                  Tom Cook
+                  {{auth()->user()->name}}
                 </p>
                 <p class="text-sm font-medium text-indigo-200 group-hover:text-white">
                   View profile
@@ -169,7 +169,7 @@
             <nav class="mt-5 flex-1 px-2 space-y-1">
 
               <!-- Current: "bg-blue-53 text-white" svg : "text-blue-51", Default: "text-white hover:bg-blue-51 hover:bg-opacity-75 " svg: "" -->
-              <a href="#" class="bg-blue-53 text-white group flex items-center px-2 py-2 text-md font-bold rounded-md">
+              <a href="/dashboard" class="bg-blue-53 text-white group flex items-center px-2 py-2 text-md font-bold rounded-md">
                 <!-- Heroicon name: outline/home -->
                 <svg class="mr-3 flex-shrink-0 h-6 w-6 text-blue-51" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
@@ -177,7 +177,7 @@
                 Dashboard
               </a>
 
-              <a href="#" class="text-blue-53 hover:bg-blue-51 hover:bg-opacity-75 group flex items-center px-2 py-2 text-md font-bold rounded-md">
+              <a href="/documents-tray" class="text-blue-53 hover:bg-blue-51 hover:bg-opacity-75 group flex items-center px-2 py-2 text-md font-bold rounded-md">
                 <!-- Heroicon name: outline/inbox -->
                 <svg class="mr-3 flex-shrink-0 h-6 w-6 text-blue-53" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
@@ -185,7 +185,7 @@
                 Documents Tray
               </a>
 
-              <a href="#" class="text-blue-53 hover:bg-blue-51 hover:bg-opacity-75 group flex items-center px-2 py-2 text-md font-bold rounded-md">
+              <a href="/transactions" class="text-blue-53 hover:bg-blue-51 hover:bg-opacity-75 group flex items-center px-2 py-2 text-md font-bold rounded-md">
                 <!-- Heroicon name: outline/inbox -->
                 <svg xmlns="http://www.w3.org/2000/svg" class="mr-3 flex-shrink-0 h-6 w-6 text-blue-53" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -193,16 +193,21 @@
                 Transactions
               </a>
 
-              <a href="#" class="text-blue-53 hover:bg-blue-51 hover:bg-opacity-75 group flex items-center px-2 py-2 text-md font-bold rounded-md">
+              <a href="/reports" class="text-blue-53 hover:bg-blue-51 hover:bg-opacity-75 group flex items-center px-2 py-2 text-md font-bold rounded-md">
                 <!-- Heroicon name: outline/inbox -->
                 <svg xmlns="http://www.w3.org/2000/svg" class="mr-3 flex-shrink-0 h-6 w-6 text-blue-53" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
                   </svg>
                 Reports
               </a>
-
-
-
+              
+             <!-- <a href="{{ route('profile.show') }}" class="text-blue-53 hover:bg-blue-51 hover:bg-opacity-75 group flex items-center px-2 py-2 text-md font-bold rounded-md"> -->
+                <!-- Heroicon name: outline/inbox -->
+               <!-- <svg xmlns="http://www.w3.org/2000/svg" class="mr-3 flex-shrink-0 h-6 w-6 text-blue-53" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                  </svg>
+                Profile
+              </a> -->
 
             </nav>
           </div>
@@ -214,11 +219,15 @@
                    this.closest('form').submit();" class="flex-shrink-0 w-full group block">
               <div class="flex items-center">
                 <div>
-                  <img class="inline-block h-16 w-16 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                  @if(Auth::user()->profile_photo_path == NULL)
+                  <img src="{{asset('storage/profile-photos/avatar.jpg') }}" class="rounded-full h-12 w-12" alt="img">
+                  @else
+                  <img src="{{asset('storage/'.Auth::user()->profile_photo_path) }}" class="rounded-full h-12 w-12" alt="img">
+                  @endif
                 </div>
                 <div class="ml-3">
                   <p class="text-md font-medium text-blue-53 drop-shadow-lg">
-                    Tom Cook
+                    {{auth()->user()->name}}
                   </p>
                   <p class="text-sm font-medium text-indigo-200 group-hover:text-white">
                     Logout
