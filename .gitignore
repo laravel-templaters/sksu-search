@@ -3,8 +3,7 @@
 /public/storage
 /storage/*.key
 /vendor
-/vendor/*
-/vendor/laravel
+/vendor/*/
 !/vendor/laravel/jetstream
 .env
 .env.backup
