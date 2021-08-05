@@ -171,33 +171,33 @@
             <nav class="flex-1 px-2 mt-5 space-y-1">
 
               <!-- Current: "bg-blue-53 text-white" svg : "text-blue-51", Default: "text-white hover:bg-blue-51 hover:bg-opacity-75 " svg: "" -->
-              <a href="/dashboard" class="flex items-center px-2 py-2 font-bold text-white rounded-md bg-blue-53 group text-md">
+              <a href="/dashboard" class="{{ is_active(url('/dashboard')) ? 'flex items-center px-2 py-2 font-bold text-white rounded-md bg-blue-53 group text-md' : 'flex items-center px-2 py-2 font-bold rounded-md text-blue-53 hover:bg-blue-51 hover:bg-opacity-75 group text-md'}}">
                 <!-- Heroicon name: outline/home -->
-                <svg class="flex-shrink-0 w-6 h-6 mr-3 text-blue-51" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <svg class="{{ is_active(url('/dashboard')) ? 'flex-shrink-0 w-6 h-6 mr-3 text-blue-51' : 'flex-shrink-0 w-6 h-6 mr-3 text-blue-53'}}" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                 </svg>
                 Dashboard
               </a>
 
-              <a href="/documents-tray" class="flex items-center px-2 py-2 font-bold rounded-md text-blue-53 hover:bg-blue-51 hover:bg-opacity-75 group text-md">
+              <a href="/documents-tray" class="{{ is_active(url('/documents-tray')) ? 'flex items-center px-2 py-2 font-bold text-white rounded-md bg-blue-53 group text-md' : 'flex items-center px-2 py-2 font-bold rounded-md text-blue-53 hover:bg-blue-51 hover:bg-opacity-75 group text-md'}}">
                 <!-- Heroicon name: outline/inbox -->
-                <svg class="flex-shrink-0 w-6 h-6 mr-3 text-blue-53" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                <svg class="{{ is_active(url('/documents-tray')) ? 'flex-shrink-0 w-6 h-6 mr-3 text-blue-51' : 'flex-shrink-0 w-6 h-6 mr-3 text-blue-53'}}" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4" />
                 </svg>
                 Documents Tray
               </a>
 
-              <a href="/transactions" class="flex items-center px-2 py-2 font-bold rounded-md text-blue-53 hover:bg-blue-51 hover:bg-opacity-75 group text-md">
+              <a href="/transactions" class="{{ is_active(url('/transactions')) ? 'flex items-center px-2 py-2 font-bold text-white rounded-md bg-blue-53 group text-md' : 'flex items-center px-2 py-2 font-bold rounded-md text-blue-53 hover:bg-blue-51 hover:bg-opacity-75 group text-md'}}">
                 <!-- Heroicon name: outline/inbox -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-6 h-6 mr-3 text-blue-53" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" class="{{ is_active(url('/transactions')) ? 'flex-shrink-0 w-6 h-6 mr-3 text-blue-51' : 'flex-shrink-0 w-6 h-6 mr-3 text-blue-53'}}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
                 Transactions
               </a>
 
-              <a href="/reports" class="flex items-center px-2 py-2 font-bold rounded-md text-blue-53 hover:bg-blue-51 hover:bg-opacity-75 group text-md">
+              <a href="/reports" class="{{ is_active(url('/reports')) ? 'flex items-center px-2 py-2 font-bold text-white rounded-md bg-blue-53 group text-md' : 'flex items-center px-2 py-2 font-bold rounded-md text-blue-53 hover:bg-blue-51 hover:bg-opacity-75 group text-md'}}">
                 <!-- Heroicon name: outline/inbox -->
-                <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-6 h-6 mr-3 text-blue-53" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg xmlns="http://www.w3.org/2000/svg" class="{{ is_active(url('/reports')) ? 'flex-shrink-0 w-6 h-6 mr-3 text-blue-51' : 'flex-shrink-0 w-6 h-6 mr-3 text-blue-53'}}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
                   </svg>
                 Reports
