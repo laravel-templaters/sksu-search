@@ -13,14 +13,15 @@ module.exports = {
         
         extend: {
             fontFamily: {
-                sans: ['Nunito', ...defaultTheme.fontFamily.sans],
-            },
+                sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+              },
             colors:{
                 blue:{
                     51: "#FFD48D",
                     52: "#EA943C",
                     53: "#58441B",
                     54: "#EC7D28",
+                    55: "#FFE9C5",
                 }
             },
         },
