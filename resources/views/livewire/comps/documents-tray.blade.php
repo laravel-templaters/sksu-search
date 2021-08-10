@@ -3,7 +3,7 @@
         <div class="">
             @livewire('comps.doctray.left-sidebar')
         </div>
-        <div class="col-span-2 pt-2 overflow-hidden sm:col-span-1">
+        <div class="col-span-2 pt-2 overflow-hidden">
             @livewire('comps.doctray.center-content')
         </div>
         <div class="pt-2">
