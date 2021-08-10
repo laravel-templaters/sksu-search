@@ -66,7 +66,7 @@
 
 
         {{-- start of sub stats--}}
-        <dl class="grid grid-cols-1 gap-5 pt-10 mt-5 sm:grid-cols-3 lg:grid-cols-4">
+        <dl class="grid grid-cols-1 gap-5 pt-0 mt-5 sm:grid-cols-3 lg:grid-cols-4">
             {{-- card --}}
             <div class="relative items-center px-4 pt-5 overflow-hidden rounded-lg shadow sm:pt-6 sm:px-6 bg-blue-54">
                 <dt class="">
