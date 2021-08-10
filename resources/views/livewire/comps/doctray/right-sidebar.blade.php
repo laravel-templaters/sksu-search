@@ -1,7 +1,40 @@
 <div>
     
 <nav aria-label="Sidebar">
-    <div class="space-y-1">
+    
+    <div class="mt-2">
+      <h3 class="px-3 text-xs font-semibold tracking-wider text-gray-500 uppercase" id="projects-headline">
+        Metadata
+      </h3>
+      <div class="mt-1 space-y-1" aria-labelledby="projects-headline">
+        <a href="#" class="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md group hover:text-gray-900 hover:bg-gray-50">
+          <span class="truncate">
+            Website redesign
+          </span>
+        </a>
+  
+        <a href="#" class="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md group hover:text-gray-900 hover:bg-gray-50">
+          <span class="truncate">
+            GraphQL API
+          </span>
+        </a>
+  
+        <a href="#" class="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md group hover:text-gray-900 hover:bg-gray-50">
+          <span class="truncate">
+            Customer migration guides
+          </span>
+        </a>
+  
+        <a href="#" class="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md group hover:text-gray-900 hover:bg-gray-50">
+          <span class="truncate">
+            Profit sharing program
+          </span>
+        </a>
+      </div>
+    </div>
+    {{-- bottom part --}}
+    
+    <div class="mt-8">
       <!-- Current: "bg-gray-100 text-gray-900", Default: "text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
       <a href="#" class="flex items-center px-3 py-2 text-sm font-medium text-gray-900 bg-gray-100 rounded-md group" aria-current="page">
         <!--
@@ -66,36 +99,6 @@
           Reports
         </span>
       </a>
-    </div>
-    <div class="mt-8">
-      <h3 class="px-3 text-xs font-semibold tracking-wider text-gray-500 uppercase" id="projects-headline">
-        Projects
-      </h3>
-      <div class="mt-1 space-y-1" aria-labelledby="projects-headline">
-        <a href="#" class="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md group hover:text-gray-900 hover:bg-gray-50">
-          <span class="truncate">
-            Website redesign
-          </span>
-        </a>
-  
-        <a href="#" class="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md group hover:text-gray-900 hover:bg-gray-50">
-          <span class="truncate">
-            GraphQL API
-          </span>
-        </a>
-  
-        <a href="#" class="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md group hover:text-gray-900 hover:bg-gray-50">
-          <span class="truncate">
-            Customer migration guides
-          </span>
-        </a>
-  
-        <a href="#" class="flex items-center px-3 py-2 text-sm font-medium text-gray-600 rounded-md group hover:text-gray-900 hover:bg-gray-50">
-          <span class="truncate">
-            Profit sharing program
-          </span>
-        </a>
-      </div>
     </div>
   </nav>
   

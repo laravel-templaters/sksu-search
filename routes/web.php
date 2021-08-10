@@ -18,6 +18,10 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
+Route::get('/profile',function(){
+    return view('userprofile');
+});
+
 
 Route::get('/transactions', function () {
     return view('transaction');

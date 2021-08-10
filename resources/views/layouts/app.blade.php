@@ -193,25 +193,30 @@
           <form method="POST" action="{{ route('logout') }}">
             @csrf
           <div class="flex flex-shrink-0 p-4 border-t bg-blue-52 border-blue-54">
-            <a href="{{ route('logout') }}"
-            onclick="event.preventDefault();
-                   this.closest('form').submit();" class="flex-shrink-0 block w-full group">
+            <div class="flex-shrink-0 block w-full group">
+           
               <div class="flex items-center">
                 <div>
+                  <a href="/profile" class="">
                   @if(Laravel\Jetstream\Jetstream::managesProfilePhotos())
                   <img src="{{Auth::user()->profile_photo_url }}" class="w-12 h-12 rounded-full" alt="">
                   @endif
+                  </a>
                 </div>
                 <div class="ml-3">
                   <p class="font-medium text-md text-blue-53 drop-shadow-lg">
                     {{auth()->user()->name}}
                   </p>
+                  <a href="{{ route('logout') }}"
+                  onclick="event.preventDefault();
+                         this.closest('form').submit();" >
                   <p class="text-sm font-medium text-indigo-200 group-hover:text-white">
                     Logout
                   </p>
                 </div>
               </div>
             </a>
+          </div>
           </div>
         </form>
         </div>
