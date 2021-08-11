@@ -8,7 +8,7 @@
       </h3>
       <div class="mt-1 space-y-1" aria-labelledby="projects-headline">
         <span class="flex items-center px-5 pt-2 font-medium text-gray-600 truncate rounded-md text-md group hover:text-gray-900 hover:bg-gray-50">
-          PO# 191919 
+          PO#  
         </span>
         
 
