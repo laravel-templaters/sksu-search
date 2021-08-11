@@ -26,8 +26,9 @@
                                             src="{{url('storage/'.$inf->profile_photos)}}"
                                             alt="">
                                     </div>
-                                    <div class="ml-4">
-                                        <div class="text-sm font-medium text-gray-900">
+                                    <div class="ml-4 cursor-pointer">
+                                        <div class="text-sm font-medium text-gray-900" wire:click="setData({{$inf->id}})">
+                                            <p>{{$message}}</p>
                                             {{$inf->firstName}} {{$inf->lastName}}
                                         </div>
                                         <!--<div class="text-sm text-gray-500">

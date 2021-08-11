@@ -1,5 +1,5 @@
-<div class="h-screen overflow-hidden bg-opacity-75 sm:h-100 md:h-100 bg-blue-52 min-h-100">
-        <div class="block w-screen bg-blue-53"><br></div>
+<div class="h-screen overflow-hidden rounded-t-md bg-opacity-75 sm:h-100 md:h-100 bg-blue-52 min-h-100">
+        <div class="block w-screen bg-blue-53 rounded-t-md"><br></div>
         <nav class="p-2 space-y-1" aria-label="Sidebar">
             <!-- Current: "bg-gray-100 text-gray-900", Default: "text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
             <ul class="font-sans">
