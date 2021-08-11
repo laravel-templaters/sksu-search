@@ -27,8 +27,7 @@
                                             alt="">
                                     </div>
                                     <div class="ml-4 cursor-pointer">
-                                        <div class="text-sm font-medium text-gray-900" wire:click="setData({{$inf->id}})">
-                                            <p>{{$message}}</p>
+                                        <div class="text-sm font-medium text-gray-900" wire:click.prevent="setData({{$inf->id}})">
                                             {{$inf->firstName}} {{$inf->lastName}}
                                         </div>
                                         <!--<div class="text-sm text-gray-500">
