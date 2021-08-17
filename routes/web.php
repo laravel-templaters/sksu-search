@@ -36,7 +36,7 @@ Route::get('/reports', function () {
 });
 
 Route::get('/register', function () {
-    
+    return view('register');
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

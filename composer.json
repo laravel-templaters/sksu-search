@@ -9,11 +9,13 @@
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
+        "jantinnerezo/livewire-alert": "^2.1",
         "laravel/framework": "^8.40",
         "laravel/jetstream": "^2.3",
         "laravel/sanctum": "^2.6",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.3",
+        "laravelcollective/html": "^6.2",
         "livewire/livewire": "^2.5",
         "pusher/pusher-php-server": "^7.0",
         "watson/active": "^6.0"
