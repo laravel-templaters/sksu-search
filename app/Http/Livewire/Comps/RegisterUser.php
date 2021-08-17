@@ -64,7 +64,7 @@ class RegisterUser extends Component
             'background' => '#ccffcc',
             'padding' => '0.5rem',
             'position' =>  'top-end', 
-            'timer' =>  3000,  
+            'timer' =>  2500,  
             'toast' =>  true, 
             'text' =>  '', 
             'confirmButtonText' =>  'Ok', 
