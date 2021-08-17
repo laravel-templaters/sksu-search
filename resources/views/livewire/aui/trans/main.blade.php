@@ -73,7 +73,10 @@
                                     <h3 class="text-lg font-medium leading-6 text-gray-900" id="modal-title">
                                         Related Documents
                                     </h3>
-                                    <div class="items-baseline mt-2 ">
+                                    <h3 class="pb-3 text-xs font-medium text-gray-600 border-b-2 border-blue-53" id="modal-title">
+                                        Press button next to file name to reveal document
+                                    </h3>
+                                    <div class="items-baseline mt-3">
                                         <ul class="">
 
                                           {{-- start foreach here --}}
