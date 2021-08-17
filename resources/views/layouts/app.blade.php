@@ -21,9 +21,13 @@
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
+
+    <style>
+      [x-cloak] { display: none !important; }
+    </style>
 </head>
 
-<body class="font-sans">
+<body class="font-sans antialiased">
 
     <!-- This example requires Tailwind CSS v2.0+ -->
 <div class="flex h-screen overflow-hidden bg-blue-51 drop-shadow-md" x-data="{isopen: true}">

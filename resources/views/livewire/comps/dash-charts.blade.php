@@ -1,3 +1,5 @@
-<div>
-    {{-- If you look to others for fulfillment, you will never truly be fulfilled. --}}
-</div>
+
+<div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+   
+  </div>
+  

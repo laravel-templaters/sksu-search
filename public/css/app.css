@@ -1134,6 +1134,14 @@ select {
 	margin-top: -0.5rem;
 	margin-bottom: -0.5rem;
 }
+.my-1 {
+	margin-top: 0.25rem;
+	margin-bottom: 0.25rem;
+}
+.my-2 {
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+}
 .ml-3 {
 	margin-left: 0.75rem;
 }
@@ -1245,6 +1253,9 @@ select {
 .grid {
 	display: grid;
 }
+.contents {
+	display: contents;
+}
 .hidden {
 	display: none;
 }
@@ -1286,6 +1297,9 @@ select {
 }
 .h-96 {
 	height: 24rem;
+}
+.h-2 {
+	height: 0.5rem;
 }
 .min-h-screen {
 	min-height: 100vh;
@@ -1343,6 +1357,9 @@ select {
 }
 .w-16 {
 	width: 4rem;
+}
+.w-2 {
+	width: 0.5rem;
 }
 .min-w-0 {
 	min-width: 0px;
@@ -1445,6 +1462,9 @@ select {
 .flex-wrap {
 	flex-wrap: wrap;
 }
+.items-end {
+	align-items: flex-end;
+}
 .items-center {
 	align-items: center;
 }
@@ -1508,6 +1528,9 @@ select {
 .overflow-y-auto {
 	overflow-y: auto;
 }
+.overflow-x-hidden {
+	overflow-x: hidden;
+}
 .overflow-y-hidden {
 	overflow-y: hidden;
 }
@@ -1516,8 +1539,14 @@ select {
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
+.whitespace-normal {
+	white-space: normal;
+}
 .whitespace-nowrap {
 	white-space: nowrap;
+}
+.whitespace-pre-wrap {
+	white-space: pre-wrap;
 }
 .break-all {
 	word-break: break-all;
@@ -1911,6 +1940,10 @@ select {
 	font-size: 1.875rem;
 	line-height: 2.25rem;
 }
+.text-4xl {
+	font-size: 2.25rem;
+	line-height: 2.5rem;
+}
 .font-medium {
 	font-weight: 500;
 }
@@ -2190,6 +2223,10 @@ select {
 	--tw-bg-opacity: 1;
 	background-color: rgba(67, 56, 202, var(--tw-bg-opacity));
 }
+.hover\:bg-red-700:hover {
+	--tw-bg-opacity: 1;
+	background-color: rgba(185, 28, 28, var(--tw-bg-opacity));
+}
 .hover\:bg-opacity-75:hover {
 	--tw-bg-opacity: 0.75;
 }
@@ -2328,6 +2365,10 @@ select {
 .focus\:ring-indigo-500:focus {
 	--tw-ring-opacity: 1;
 	--tw-ring-color: rgba(99, 102, 241, var(--tw-ring-opacity));
+}
+.focus\:ring-red-500:focus {
+	--tw-ring-opacity: 1;
+	--tw-ring-color: rgba(239, 68, 68, var(--tw-ring-opacity));
 }
 .focus\:ring-opacity-50:focus {
 	--tw-ring-opacity: 0.5;
@@ -2485,6 +2526,10 @@ select {
 		width: 100%;
 	}
 
+	.sm\:w-auto {
+		width: auto;
+	}
+
 	.sm\:max-w-md {
 		max-width: 28rem;
 	}
@@ -2536,6 +2581,10 @@ select {
 
 	.sm\:grid-cols-3 {
 		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+
+	.sm\:flex-row-reverse {
+		flex-direction: row-reverse;
 	}
 
 	.sm\:items-start {
