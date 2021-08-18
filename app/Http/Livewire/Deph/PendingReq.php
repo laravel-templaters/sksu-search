@@ -34,7 +34,7 @@ class PendingReq extends Component
         $this->alert('success', $nagsend, [
             'background' => '#ccffcc',
             'padding' => '1rem',
-            'position' =>  'top', 
+            'position' =>  'top-end', 
             'timer' =>  1800,  
             'toast' =>  true, 
             'text' =>  '', 
