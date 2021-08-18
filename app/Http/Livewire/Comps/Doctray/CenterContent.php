@@ -11,12 +11,12 @@ class CenterContent extends Component
 
     public function render()
     {
-        $info = Info::all();
+        $info = Info::get();
         return view('livewire.comps.doctray.center-content')->with('info', $info);
     }
 
     public function setData($id)
     {
-        $this->message = $id;
+        $this->emit('updateMeta', $id);
     }
 }

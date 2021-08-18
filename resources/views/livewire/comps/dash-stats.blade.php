@@ -68,53 +68,62 @@
         {{-- start of sub stats--}}
         <dl class="grid grid-cols-1 gap-5 pt-0 mt-5 sm:grid-cols-3 lg:grid-cols-4">
             {{-- card --}}
-            <div class="relative items-center px-4 pt-5 overflow-hidden rounded-lg shadow sm:pt-6 sm:px-6 bg-blue-54">
-                <dt class="">
-                    <p class="mx-auto text-lg font-bold text-center text-white text-shadow-lg wrap">No. of Incoming
-                        Request</p>
-                </dt>
-                <dd class="items-center pt-3 pb-6 mx-auto">
-                    <p class="text-2xl font-semibold text-center ">
-                        71,897
-                    </p>
-                </dd>
-            </div>
+            <a href="/dh/incoming" class="">
+                <div class="relative items-center px-4 pt-5 overflow-hidden rounded-lg shadow sm:pt-6 sm:px-6 bg-blue-54">
+                    <dt class="">
+                        <p class="mx-auto text-lg font-bold text-center text-white text-shadow-lg wrap">No. of Incoming
+                            Request</p>
+                    </dt>
+                    <dd class="items-center pt-2 pb-6 mx-auto">
+                        <p class="text-2xl font-semibold text-center ">
+                            71,897
+                        </p>
+                    </dd>
+                </div>  
+            </a>
             {{-- card --}}
+            <a href="" class="">
             <div class="relative items-center px-4 pt-5 overflow-hidden rounded-lg shadow sm:pt-6 sm:px-6 bg-blue-54">
                 <dt class="">
                     <p class="mx-auto text-lg font-bold text-center text-white text-shadow-lg wrap">No. of Outgoing
                         Request</p>
                 </dt>
-                <dd class="items-center pt-3 pb-6 mx-auto">
+                <dd class="items-center pt-2 pb-6 mx-auto">
                     <p class="text-2xl font-semibold text-center ">
                         71,897
                     </p>
                 </dd>
             </div>
+        </a>
             {{-- card --}}
+            <a href="/dh/returns">
             <div class="relative items-center px-4 pt-5 overflow-hidden rounded-lg shadow sm:pt-6 sm:px-6 bg-blue-54">
                 <dt class="">
-                    <p class="mx-auto text-lg font-bold text-center text-white text-shadow-lg wrap">Number of Return
+                    <p class="mx-auto text-lg font-bold text-center text-white text-shadow-lg wrap">No. of Returned
                         Request</p>
                 </dt>
-                <dd class="items-center pb-6 mx-auto">
+                <dd class="items-center pt-2 pb-6 mx-auto">
                     <p class="text-2xl font-semibold text-center ">
                         71,897
                     </p>
                 </dd>
             </div>
+            </a>
             {{-- card --}}
-            <div class="relative items-center px-4 pt-5 overflow-hidden rounded-lg shadow sm:pt-6 sm:px-6 bg-blue-54">
-                <dt class="">
-                    <p class="mx-auto text-lg font-bold text-center text-white text-shadow-lg wrap">No. of  Pending
-                        Request</p>
-                </dt>
-                <dd class="items-center pb-6 mx-auto">
-                    <p class="text-2xl font-semibold text-center ">
-                        71,897
-                    </p>
-                </dd>
-            </div>
+            <a href="/dh/pending">
+                <div class="relative items-center px-4 pt-5 overflow-hidden rounded-lg shadow sm:pt-6 sm:px-6 bg-blue-54">
+                    <dt class="">
+                        <p class="mx-auto text-lg font-bold text-center text-white text-shadow-lg wrap">No. of  Pending
+                            Request</p>
+                    </dt>
+                    <dd class="items-center pt-2 pb-6 mx-auto">
+                        <p class="text-2xl font-semibold text-center ">
+                            71,897
+                        </p>
+                    </dd>
+                </div>
+            </a>
+            
         </dl>
     </div>
 

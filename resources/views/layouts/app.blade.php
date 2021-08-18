@@ -21,9 +21,13 @@
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
+
+    <style>
+      [x-cloak] { display: none !important; }
+    </style>
 </head>
 
-<body class="font-sans">
+<body class="font-sans antialiased">
 
     <!-- This example requires Tailwind CSS v2.0+ -->
 <div class="flex h-screen overflow-hidden bg-blue-51 drop-shadow-md" x-data="{isopen: true}">
@@ -180,6 +184,14 @@
                   </svg>
                 Reports
               </a>
+
+              <a href="/register" class="{{ is_active(url('/reports')) ? 'flex items-center px-2 py-2 font-bold text-white rounded-md bg-blue-53 group text-md' : 'flex items-center px-2 py-2 font-bold rounded-md text-blue-53 hover:bg-blue-51 hover:bg-opacity-75 group text-md'}}">
+                <!-- Heroicon name: outline/inbox -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="{{ is_active(url('/reports')) ? 'flex-shrink-0 w-6 h-6 mr-3 text-blue-51' : 'flex-shrink-0 w-6 h-6 mr-3 text-blue-53'}}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                  </svg>
+                Register
+              </a>
               
              <!-- <a href="{{ route('profile.show') }}" class="flex items-center px-2 py-2 font-bold rounded-md text-blue-53 hover:bg-blue-51 hover:bg-opacity-75 group text-md"> -->
                 <!-- Heroicon name: outline/inbox -->
@@ -270,6 +282,9 @@
     @stack('modals')
 
     @livewireScripts
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10">
+    </script>
+      <x-livewire-alert::scripts/>
 
 </body>
 
