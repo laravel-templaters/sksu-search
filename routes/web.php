@@ -7,6 +7,7 @@ use App\Http\Livewire\Deph\IncomingReq;
 use App\Http\Livewire\Deph\PendingReq;
 use App\Http\Livewire\Deph\ViewDv;
 use App\Http\Livewire\Deph\ReturnedReq;
+use App\Http\Livewire\Secretariat\Dash;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,11 +48,13 @@ Route::get('/dh/incoming', IncomingReq::class);
 Route::get('/dh/pending', PendingReq::class);
 Route::get('/dh/returns', ReturnedReq::class);
 Route::get('/dh/view', ViewDv::class);
+Route::get('/sec/dashboard', Dash::class);
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
 
 
 

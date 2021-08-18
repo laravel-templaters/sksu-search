@@ -245,7 +245,7 @@
                     </div>
                 </div>
                 <div class="px-4 py-3 bg-gray-50 sm:px-6 sm:flex sm:flex-row-reverse">
-                    <button wire:click.prevent='testButton("DV Returned")' type="button"
+                    <button wire:click.prevent='testButton("DV Returned    ")' type="button"
                         class="inline-flex justify-center w-full px-4 py-2 text-base font-medium text-white border border-transparent rounded-md shadow-sm bg-blue-54 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:bg-red-600 sm:ml-3 sm:w-auto sm:text-sm">
                         Return Voucher
                     </button>
