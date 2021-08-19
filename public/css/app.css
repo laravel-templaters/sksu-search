@@ -1523,6 +1523,18 @@ select {
 	--tw-translate-x: 1.5rem;
 	transform: var(--tw-transform);
 }
+.translate-y-full {
+	--tw-translate-y: 100%;
+	transform: var(--tw-transform);
+}
+.-translate-y-0 {
+	--tw-translate-y: 0px;
+	transform: var(--tw-transform);
+}
+.-translate-y-full {
+	--tw-translate-y: -100%;
+	transform: var(--tw-transform);
+}
 .scale-95 {
 	--tw-scale-x: .95;
 	--tw-scale-y: .95;
@@ -3102,6 +3114,10 @@ select {
 
 	.sm\:duration-700 {
 		transition-duration: 700ms;
+	}
+
+	.sm\:duration-300 {
+		transition-duration: 300ms;
 	}
 }
 @media (min-width: 768px) {
