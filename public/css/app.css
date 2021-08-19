@@ -751,6 +751,39 @@ select {
 [type='file']:focus {
 	outline: 1px auto -webkit-focus-ring-color;
 }
+.container {
+	width: 100%;
+}
+@media (min-width: 640px) {
+
+	.container {
+		max-width: 640px;
+	}
+}
+@media (min-width: 768px) {
+
+	.container {
+		max-width: 768px;
+	}
+}
+@media (min-width: 1024px) {
+
+	.container {
+		max-width: 1024px;
+	}
+}
+@media (min-width: 1280px) {
+
+	.container {
+		max-width: 1280px;
+	}
+}
+@media (min-width: 1536px) {
+
+	.container {
+		max-width: 1536px;
+	}
+}
 .prose {
 	color: #374151;
 	max-width: 65ch;
@@ -1478,6 +1511,18 @@ select {
 	--tw-translate-x: 100%;
 	transform: var(--tw-transform);
 }
+.-translate-x-0 {
+	--tw-translate-x: 0px;
+	transform: var(--tw-transform);
+}
+.-translate-x-6 {
+	--tw-translate-x: -1.5rem;
+	transform: var(--tw-transform);
+}
+.translate-x-6 {
+	--tw-translate-x: 1.5rem;
+	transform: var(--tw-transform);
+}
 .scale-95 {
 	--tw-scale-x: .95;
 	--tw-scale-y: .95;
@@ -1495,6 +1540,88 @@ select {
 }
 .transform {
 	transform: var(--tw-transform);
+}
+@-webkit-keyframes pulse {
+
+	50% {
+		opacity: .5;
+	}
+}
+@keyframes pulse {
+
+	50% {
+		opacity: .5;
+	}
+}
+.animate-pulse {
+	-webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+	        animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+@-webkit-keyframes ping {
+
+	75%, 100% {
+		transform: scale(2);
+		opacity: 0;
+	}
+}
+@keyframes ping {
+
+	75%, 100% {
+		transform: scale(2);
+		opacity: 0;
+	}
+}
+.animate-ping {
+	-webkit-animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+	        animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+@-webkit-keyframes spin {
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+@keyframes spin {
+
+	to {
+		transform: rotate(360deg);
+	}
+}
+.animate-spin {
+	-webkit-animation: spin 1s linear infinite;
+	        animation: spin 1s linear infinite;
+}
+@-webkit-keyframes bounce {
+
+	0%, 100% {
+		transform: translateY(-25%);
+		-webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
+		        animation-timing-function: cubic-bezier(0.8,0,1,1);
+	}
+
+	50% {
+		transform: none;
+		-webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
+		        animation-timing-function: cubic-bezier(0,0,0.2,1);
+	}
+}
+@keyframes bounce {
+
+	0%, 100% {
+		transform: translateY(-25%);
+		-webkit-animation-timing-function: cubic-bezier(0.8,0,1,1);
+		        animation-timing-function: cubic-bezier(0.8,0,1,1);
+	}
+
+	50% {
+		transform: none;
+		-webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
+		        animation-timing-function: cubic-bezier(0,0,0.2,1);
+	}
+}
+.animate-bounce {
+	-webkit-animation: bounce 1s infinite;
+	        animation: bounce 1s infinite;
 }
 .cursor-default {
 	cursor: default;
@@ -2378,6 +2505,9 @@ select {
 .duration-500 {
 	transition-duration: 500ms;
 }
+.duration-700 {
+	transition-duration: 700ms;
+}
 .ease-in-out {
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -2512,6 +2642,10 @@ select {
 .focus\:border-gray-300:focus {
 	--tw-border-opacity: 1;
 	border-color: rgba(209, 213, 219, var(--tw-border-opacity));
+}
+.focus\:border-indigo-500:focus {
+	--tw-border-opacity: 1;
+	border-color: rgba(99, 102, 241, var(--tw-border-opacity));
 }
 .focus\:bg-indigo-600:focus {
 	--tw-bg-opacity: 1;
@@ -2684,6 +2818,14 @@ select {
 
 	.sm\:col-span-4 {
 		grid-column: span 4 / span 4;
+	}
+
+	.sm\:col-span-3 {
+		grid-column: span 3 / span 3;
+	}
+
+	.sm\:col-span-6 {
+		grid-column: span 6 / span 6;
 	}
 
 	.sm\:mx-0 {
@@ -3057,6 +3199,10 @@ select {
 
 	.lg\:col-span-8 {
 		grid-column: span 8 / span 8;
+	}
+
+	.lg\:col-span-2 {
+		grid-column: span 2 / span 2;
 	}
 
 	.lg\:-mx-8 {

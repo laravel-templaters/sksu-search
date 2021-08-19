@@ -160,7 +160,7 @@
                 <dd class="h-full">
                     <ul role="list"
                         class="h-full mt-1 overflow-y-auto bg-white divide-y divide-gray-200 rounded-lg shadow">
-                        <li class="px-4 py-4 bg-green-100">
+                        <li class="px-4 py-4 bg-green-100 animate-pulse">
                             <div class="flex space-x-3">
                                 <div class="flex-1 space-y-1">
                                     <div class="flex items-center justify-between">
@@ -303,7 +303,7 @@
                         x-transition:enter-start="translate-x-full" x-transition:enter-end="translate-x-0"
                         x-transition:leave="transform transition ease-in-out duration-500 sm:duration-700"
                         x-transition:leave-start="translate-x-0" x-transition:leave-end="translate-x-full">
-                        <div class="flex flex-col h-full overflow-y-scroll shadow-xl bg-blue-55">
+                        <div class="flex flex-col h-full overflow-y-auto shadow-xl bg-blue-55">
                             <div class="px-4 py-6 bg-blue-53 sm:px-6">
                                 <div class="flex items-center justify-between">
                                     <h2 class="text-lg font-medium text-white" id="slide-over-title">
@@ -333,7 +333,7 @@
                                 <div class="absolute inset-0 px-4 py-6 sm:px-6">
 
 
-                                    <!-- This example requires Tailwind CSS v2.0+ -->
+                                    {{-- crumbs --}}
                                     <div class="flow-root">
                                         <ul role="list" class="-mb-8">
                                             <li>
