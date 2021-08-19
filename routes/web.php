@@ -8,6 +8,7 @@ use App\Http\Livewire\Deph\PendingReq;
 use App\Http\Livewire\Deph\ViewDv;
 use App\Http\Livewire\Deph\ReturnedReq;
 use App\Http\Livewire\Secretariat\Dash;
+use App\Http\Livewire\Secretariat\CreateDv;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,8 +49,12 @@ Route::get('/dh/incoming', IncomingReq::class);
 Route::get('/dh/pending', PendingReq::class);
 Route::get('/dh/returns', ReturnedReq::class);
 Route::get('/dh/view', ViewDv::class);
-Route::get('/sec/dashboard', Dash::class);
 
+
+//delete lng ni gab kung mag route ka na liwat
+Route::get('/sec/dashboard', Dash::class);
+Route::get('/sec/newvoucher', CreateDv::class);
+//asta dri --^
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

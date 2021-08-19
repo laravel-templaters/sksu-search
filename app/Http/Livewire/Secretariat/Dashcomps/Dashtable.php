@@ -1,24 +1,19 @@
 <?php
 
-namespace App\Http\Livewire\Secretariat;
+namespace App\Http\Livewire\Secretariat\Dashcomps;
 
 use Livewire\Component;
 
-class Dash extends Component
+class Dashtable extends Component
 {
-    public $ispanelopen=false;
-    public $dvid;
+    public $searchterm;
     public function render()
     {
-        return view('livewire.secretariat.dash');
+        return view('livewire.secretariat.dashcomps.dashtable');
     }
-    public function openPanel($dv_id){
-        $this->ispanelopen=true;
-        $this->dvid = $dv_id;
-      
-    }
-    public function search($nagsend){
-        $this->alert('success', $nagsend, [
+    public function search()
+    {
+        $this->alert('success', $this->searchterm, [
             'background' => '#ccffcc',
             'padding' => '1rem',
             'position' =>  'top-end', 
