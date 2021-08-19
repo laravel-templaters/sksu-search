@@ -8,9 +8,11 @@ class Dash extends Component
 {
     public $ispanelopen=false;
     public $dvid;
+    public $searchterm;
     public function render()
     {
         return view('livewire.secretariat.dash');
+        
     }
     public function openPanel($dv_id){
         $this->ispanelopen=true;

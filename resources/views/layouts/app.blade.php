@@ -258,7 +258,7 @@
             <h1 class="text-2xl font-semibold text-gray-900">{{$header}}</h1>
           </div>
           @endif
-          <div class="px-2 mx-auto max-w-7xl ">
+          <div class="px-0 mx-auto max-w-7xl ">
             <!-- Replace with your content -->
            
               {{-- <div class="border-4 border-gray-200 border-dashed rounded-lg h-96">

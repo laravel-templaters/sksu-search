@@ -80,9 +80,9 @@
 
                     <h3 class="flex px-2 py-3 text-lg font-bold text-blue-53"> Current Requests </h3>
 
-                    <input wire:model='searchterm' type="text" name="name" id="name"
+                    <input wire:model.debounce.600ms='searchterm' type="text" name="name" id="name"
                         class="flex w-1/3 py-2 text-gray-900 placeholder-gray-500 border-0 rounded-lg focus:ring-0 sm:text-sm"
-                        placeholder="Search Here" wire:keydown.enter="search">
+                        placeholder="Search Here">
 
                 </dt>
                 <dd>
