@@ -124,11 +124,11 @@
                 <!-- Content goes here -->
                 <!-- We use less vertical padding on card headers on desktop than on body sections -->
             </div> --}}
-            <div x-show="isstep1open" class="px-4 py-5 overflow-hidden sm:p-6" 
+            <div x-cloak x-show="isstep1open" class="px-4 py-5 overflow-hidden sm:p-6" 
             x-transition:enter="transform transition ease-in-out duration-700 sm:duration-700"
             x-transition:enter-start="-translate-x-full"
             x-transition:enter-end="-translate-x-0"
-            x-transition:leave="transform transition ease-in-out duration-700 sm:duration-700"
+            x-transition:leave="transform transition ease-in-out duration-300 sm:duration-300"
             x-transition:leave-start="-translate-x-0" x-transition:leave-end="-translate-x-full">
                 <div class="px-4 py-5 bg-white shadow sm:rounded-lg sm:p-6">
                     <div class="md:grid md:grid-cols-3 md:gap-6">
@@ -246,10 +246,7 @@
             <div x-cloak x-show="isstep2open" class="px-4 py-5 overflow-hidden sm:p-6" 
             x-transition:enter="transform transition ease-in-out duration-700 sm:duration-700"
             x-transition:enter-start="translate-x-full"
-            x-transition:enter-end="translate-x-0"
-            x-transition:leave="transform transition ease-in-out duration-700 sm:duration-700"
-            x-transition:leave-start="-translate-x-0"
-            x-transition:leave-end="-translate-x-full">
+            x-transition:enter-end="translate-x-0">
                 <div class="px-4 py-5 bg-white shadow sm:rounded-lg sm:p-6">
                     <div class="md:grid md:grid-cols-3 md:gap-6">
                         <div class="md:col-span-1">

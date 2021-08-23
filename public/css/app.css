@@ -2954,6 +2954,10 @@ select {
 	.sm\:duration-700 {
 		transition-duration: 700ms;
 	}
+
+	.sm\:duration-300 {
+		transition-duration: 300ms;
+	}
 }
 @media (min-width: 768px) {
 
