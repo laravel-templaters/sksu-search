@@ -9,6 +9,7 @@ use App\Http\Livewire\Deph\ViewDv;
 use App\Http\Livewire\Deph\ReturnedReq;
 use App\Http\Livewire\Secretariat\Dash;
 use App\Http\Livewire\Secretariat\CreateDv;
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -52,13 +53,23 @@ Route::get('/dh/view', ViewDv::class);
 
 
 //delete lng ni gab kung mag route ka na liwat
-Route::get('/sec/dashboard', Dash::class);
-Route::get('/sec/newvoucher', CreateDv::class);
+// Route::get('/sec/dashboard', Dash::class);
+// Route::get('/sec/newvoucher', CreateDv::class);
+
+//Route::get('dashboard', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
+//Route::get('/sec/dashboard', [HomeController::class, 'index'])->name('sec.home');
 //asta dri --^
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+ Route::middleware(['auth:sanctum', 'verified', 'role:admin'])->get('/dashboard', function () {
+     return view('dashboard');
+ })->name('dashboard');
+
+ Route::middleware(['auth:sanctum', 'verified', 'role:sec'])->get('/sec/dashboard', function () {
+    return view('livewire.secretariat.dash');
+})->name('secretariat');
+
+ Route::get('redirects', 'App\Http\Controllers\HomeController@index');
+
 
 
 
