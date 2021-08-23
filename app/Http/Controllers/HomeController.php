@@ -16,7 +16,7 @@ class HomeController extends Controller
         {
             return view('dashboard');
         }else if($role == 2){
-            return view('secretariat.dash');
+           return redirect()->route('secretariat');
         }
     }
 }

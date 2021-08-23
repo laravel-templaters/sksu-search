@@ -65,9 +65,10 @@ Route::get('/dh/view', ViewDv::class);
  })->name('dashboard');
 
  Route::middleware(['auth:sanctum', 'verified', 'role:sec'])->get('/sec/dashboard', function () {
-    return view('livewire.secretariat.dash');
+    return view('sec.dashboard-wrapper');
 })->name('secretariat');
 
+Route::get('/resec', Dash::class);
  Route::get('redirects', 'App\Http\Controllers\HomeController@index');
 
 
