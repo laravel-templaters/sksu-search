@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\StatefulGuard;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 use Laravel\Fortify\Actions\ConfirmPassword;
 
@@ -26,7 +27,7 @@ class OtherBrowserSessionsController extends Controller
 
         if (! $confirmed) {
             throw ValidationException::withMessages([
-                'password' => __('The password is incorrect.'),
+                'password' => 'The password is incorrect.',
             ]);
         }
 
