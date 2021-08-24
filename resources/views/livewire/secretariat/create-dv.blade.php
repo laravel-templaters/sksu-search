@@ -147,7 +147,7 @@
                                         <input type="text" wire:model="name" name="first-name" id="first-name" autocomplete="given-name"
                                             class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" >
                                             @error('name')
-                                            <span class="text-red-600">{{$message}}</span>
+                                            <span class="text-sm text-red-500">{{$message}}</span>
                                             @enderror
                                     </div>
 

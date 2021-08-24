@@ -54,7 +54,7 @@ Route::get('/dh/view', ViewDv::class);
 
 //delete lng ni gab kung mag route ka na liwat
 // Route::get('/sec/dashboard', Dash::class);
-// Route::get('/sec/newvoucher', CreateDv::class);
+ Route::get('/sec/newvoucher', CreateDv::class);
 
 //Route::get('dashboard', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
 //Route::get('/sec/dashboard', [HomeController::class, 'index'])->name('sec.home');
@@ -68,7 +68,6 @@ Route::get('/dh/view', ViewDv::class);
     return view('sec.dashboard-wrapper');
 })->name('secretariat');
 
-Route::get('/resec', Dash::class);
  Route::get('redirects', 'App\Http\Controllers\HomeController@index');
 
 
