@@ -10,6 +10,10 @@ class CreateDv extends Component
     public $isstep1open = true;
     public $isstep2open = false;
     public $isstep3open = false;
+    public $newDV = true;
+    public $step1finished = false;
+    public $step2finished = false;
+    public $step3finished = false;
 
 
     //form variables for wire model
@@ -50,6 +54,8 @@ class CreateDv extends Component
     }
     
     public function openstep2(){
+        
+        $this->step1finished = true;
         $this->isstep1open = false;
         $this->isstep3open = false;
         $this->isstep2open = true;
