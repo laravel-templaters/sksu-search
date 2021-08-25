@@ -73,6 +73,10 @@ Route::middleware(['auth:sanctum', 'verified', 'role:admin'])->get('/dashboard',
     return view('sec.dashboard-wrapper');
 })->name('secretariat');
 
+Route::middleware(['auth:sanctum', 'verified'])->get('/dh/incoming', function () {
+    return view('dh.dashboard-wrapper');
+})->name('department-head');
+
  Route::get('redirects', 'App\Http\Controllers\HomeController@index');
 
 

@@ -17,6 +17,8 @@ class HomeController extends Controller
             return view('dashboard');
         }else if($role == 2){
            return redirect()->route('secretariat');
-        }
+        }else if($role == 3){
+            return redirect()->route('department-head');
+         }
     }
 }
