@@ -36,7 +36,7 @@
                                             <span class="mt-0.5 ml-4 min-w-0 flex flex-col">
                                                 <span class="text-xs font-bold tracking-wide uppercase text-blue-54">DV Main
                                                     Information Form</span>
-                                                <span class="text-sm font-medium text-gray-400">Vitae sed mi luctus laoreet.</span>
+                                                <span class="text-sm font-medium text-gray-400">Fill up the form for DV.</span>
                                             </span>
                                         </span>
                                     </a>
@@ -60,7 +60,7 @@
                                             <span class="mt-0.5 ml-4 min-w-0 flex flex-col">
                                                 <span
                                                     class="text-xs font-bold tracking-wide uppercase text-blue-53">Attachments</span>
-                                                <span class="text-sm font-medium text-gray-500">Cursus semper viverra.</span>
+                                                <span class="text-sm font-medium text-gray-500">Upload attatchments (PDF).</span>
                                             </span>
                                         </span>
                                     </a>

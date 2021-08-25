@@ -29,22 +29,27 @@ Route::get('/profile',function(){
     return view('userprofile');
 });
 
+// Route::get('/transactions', function () {
+//     return view('transaction');
+// });
 
-Route::get('/transactions', function () {
-    return view('transaction');
-});
-
-Route::get('/documents-tray', function () {
+Route::middleware(['auth:sanctum', 'verified', 'role:admin'])->get('/documents-tray', function () {
     return view('docu-tray');
-});
+})->name('docu-tray');
 
-Route::get('/reports', function () {
+
+Route::middleware(['auth:sanctum', 'verified', 'role:admin'])->get('/transactions', function () {
+    return view('transaction');
+})->name('transaction');
+
+
+Route::middleware(['auth:sanctum', 'verified', 'role:admin'])->get('/reports', function () {
     return view('report');
-});
+})->name('report');
 
-Route::get('/register', function () {
+Route::middleware(['auth:sanctum', 'verified', 'role:admin'])->get('/register', function () {
     return view('register');
-});
+})->name('register');
 
 Route::get('/dh/incoming', IncomingReq::class);
 Route::get('/dh/pending', PendingReq::class);
@@ -54,17 +59,17 @@ Route::get('/dh/view', ViewDv::class);
 
 //delete lng ni gab kung mag route ka na liwat
 // Route::get('/sec/dashboard', Dash::class);
- Route::get('/sec/newvoucher', CreateDv::class);
+Route::get('/sec/newvoucher', CreateDv::class);
 
 //Route::get('dashboard', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
 //Route::get('/sec/dashboard', [HomeController::class, 'index'])->name('sec.home');
 //asta dri --^
 
- Route::middleware(['auth:sanctum', 'verified', 'role:admin'])->get('/dashboard', function () {
+Route::middleware(['auth:sanctum', 'verified', 'role:admin'])->get('/dashboard', function () {
      return view('dashboard');
  })->name('dashboard');
 
- Route::middleware(['auth:sanctum', 'verified', 'role:sec'])->get('/sec/dashboard', function () {
+ Route::middleware(['auth:sanctum', 'verified'])->get('/sec/dashboard', function () {
     return view('sec.dashboard-wrapper');
 })->name('secretariat');
 
