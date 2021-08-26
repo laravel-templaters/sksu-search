@@ -125,7 +125,7 @@
               </div>
               <div class="ml-3">
                 <p class="font-medium text-md text-blue-53 drop-shadow-lg">
-                  {{auth()->user()->name}}
+                  {{auth()->user()->first_name}}
                 </p>
                 <p class="text-sm font-medium text-indigo-200 group-hover:text-white">
                   Logout
@@ -193,7 +193,7 @@
                 </div>
                 <div class="ml-3">
                   <p class="font-medium text-md text-blue-53 drop-shadow-lg">
-                    {{auth()->user()->name}}
+                    {{auth()->user()->first_name}}
                   </p>
                   <a href="{{ route('logout') }}"
                   onclick="event.preventDefault();

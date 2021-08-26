@@ -16,25 +16,28 @@
                             Choose Department
                             </label>
                             <select wire:model="selectedDept" placeholder="--Select Department--" id="department" name="department" autocomplete="department" class="block w-full max-w-lg border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm">
-                                <option value="1">Accounting</option>
-                                <option value="2">Education</option>
-                                <option value="">Agriculture</option>
+                                @foreach ($departments as $department)
+                                <option value="{{$department->id}}">{{$department->department_name}}</option>
+                                @endforeach
                             </select>
                         </div>
                 <ul role="list" class="grid grid-cols-2 mx-auto text-center gap-x-4 gap-y-8 sm:grid-cols-4 md:gap-x-6 lg:max-w-5xl lg:gap-x-8 lg:gap-y-12 xl:grid-cols-6">       
                      {{-- loop this --}}
-                    <li>
+                     @foreach ($users as $user)
+                     <li>
                         <div class="space-y-4">
                             <img class="w-20 h-20 mx-auto rounded-full lg:w-24 lg:h-24" src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80" alt="">
                             <div class="space-y-2">
                                 <div class="text-xs font-medium lg:text-sm">
-                                    <h3 class="text-blue-53">Michael Foster</h3>
-                                    <p class="text-indigo-600">Accounting</p>
+                                    <h3 class="text-blue-53">{{$user->first_name}}</h3>
+                                    <p class="text-indigo-600">{{$user->departments->department_name}}</p>
                                     <p class="text-indigo-600">Department Head</p>
                                 </div>
                             </div>
                         </div>
                     </li>
+                     @endforeach
+
                     {{-- loop this --}}
                 </ul>
             </div>
