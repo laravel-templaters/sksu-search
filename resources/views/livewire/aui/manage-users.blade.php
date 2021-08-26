@@ -62,9 +62,24 @@
                                             <input type="text" name="username" id="username" autocomplete="username" class="flex-1 block w-full min-w-0 border-gray-300 rounded-none focus:ring-indigo-500 focus:border-indigo-500 rounded-r-md sm:text-sm">
                                     </div>
                                 </div>
+                                <div class="sm:col-span-4">
+                                    <label for="password" class="block text-sm font-medium text-gray-700">
+                                        Password
+                                    </label>
+                                    <div class="flex mt-1 rounded-md shadow-sm">
+                                        <input type="password" name="password" id="password" autocomplete="password" class="flex-1 block w-full min-w-0 border-gray-300 rounded-none focus:ring-indigo-500 focus:border-indigo-500 rounded-r-md sm:text-sm">
+                                    </div>
+                                    <label for="password" class="block text-sm font-medium text-gray-700">
+                                        Password
+                                    </label>
+                                    <div class="flex mt-1 rounded-md shadow-sm">
+                                        <input type="password" name="password" id="password" autocomplete="password" class="flex-1 block w-full min-w-0 border-gray-300 rounded-none focus:ring-indigo-500 focus:border-indigo-500 rounded-r-md sm:text-sm">
+                                    </div>
+                                    
+                                </div>
                             </div>
                         </div>
-
+                        
                         <div class="pt-8">
                         <div>
                             <h3 class="text-lg font-medium leading-6 text-gray-900">
@@ -102,7 +117,7 @@
                             </div>
                             </div>
 
-                            <div class="sm:col-span-3">
+                            {{-- <div class="sm:col-span-3">
                             <label for="country" class="block text-sm font-medium text-gray-700">
                                 Country / Region
                             </label>
@@ -113,7 +128,7 @@
                                 <option>Mexico</option>
                                 </select>
                             </div>
-                            </div>
+                            </div> --}}
 
                             <div class="sm:col-span-6">
                             <label for="street-address" class="block text-sm font-medium text-gray-700">
@@ -156,16 +171,16 @@
                         <div class="pt-8">
                         <div>
                             <h3 class="text-lg font-medium leading-6 text-gray-900">
-                            Notifications
+                            Deparment Details
                             </h3>
                             <p class="mt-1 text-sm text-gray-500">
-                            We'll always let you know about important changes, but you pick what else you want to hear about.
+                            Set Department, Department Position and Roles
                             </p>
                         </div>
                         <div class="mt-6">
                             <fieldset>
                             <legend class="text-base font-medium text-gray-900">
-                                By Email
+                                Deparment And Position
                             </legend>
                             <div class="mt-4 space-y-4">
                                 <div class="relative flex items-start">
@@ -175,24 +190,6 @@
                                 <div class="ml-3 text-sm">
                                     <label for="comments" class="font-medium text-gray-700">Comments</label>
                                     <p class="text-gray-500">Get notified when someones posts a comment on a posting.</p>
-                                </div>
-                                </div>
-                                <div class="relative flex items-start">
-                                <div class="flex items-center h-5">
-                                    <input id="candidates" name="candidates" type="checkbox" class="w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500">
-                                </div>
-                                <div class="ml-3 text-sm">
-                                    <label for="candidates" class="font-medium text-gray-700">Candidates</label>
-                                    <p class="text-gray-500">Get notified when a candidate applies for a job.</p>
-                                </div>
-                                </div>
-                                <div class="relative flex items-start">
-                                <div class="flex items-center h-5">
-                                    <input id="offers" name="offers" type="checkbox" class="w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500">
-                                </div>
-                                <div class="ml-3 text-sm">
-                                    <label for="offers" class="font-medium text-gray-700">Offers</label>
-                                    <p class="text-gray-500">Get notified when a candidate accepts or rejects an offer.</p>
                                 </div>
                                 </div>
                             </div>
