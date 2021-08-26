@@ -9,6 +9,7 @@ use App\Http\Livewire\Deph\ViewDv;
 use App\Http\Livewire\Deph\ReturnedReq;
 use App\Http\Livewire\Secretariat\Dash;
 use App\Http\Livewire\Secretariat\CreateDv;
+use App\Http\Livewire\Aui\ManageUsers;
 use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
@@ -58,6 +59,8 @@ Route::get('/dh/view', ViewDv::class);
 
 
 //delete lng ni gab kung mag route ka na liwat
+Route::get('/admin/manageusers', ManageUsers::class);
+
 // Route::get('/sec/dashboard', Dash::class);
 Route::get('/sec/newvoucher', CreateDv::class);
 
