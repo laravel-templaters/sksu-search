@@ -9,8 +9,11 @@
                             @if($selectedDept=="")
                             Sultan Kudarat State University
                             @else
-                            @foreach ($users as $user)
-                            {{$user->departments->department_name}}
+                            
+                            @foreach ($departments as $department)
+                                @if($selectedDept==$department->id)
+                                    {{$department->department_name}}
+                                @endif
                             @endforeach
                                 
                             @endif
@@ -211,6 +214,18 @@
                                         @endforeach
                                         </select>
                                         {{-- position here --}}
+                                    </div>
+                                    <div class="pl-3 space-y-1 sm:col-span-2">
+                                        <label for="zip" class="block text-sm font-medium text-gray-700">
+                                            Role
+                                        </label>
+                                        {{-- Roles here --}}
+                                        <select placeholder="--Select Department--" id="department" name="department" autocomplete="department" class="block w-full max-w-lg border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm">
+                                        @foreach ($departments as $department)
+                                        <option value="{{$department->id}}">{{$department->department_name}}</option>
+                                        @endforeach
+                                        </select>
+                                        {{-- Roles here --}}
                                     </div>
                                 </div>
                             </div>
