@@ -112,6 +112,9 @@
                             <div class="mt-1">
                                 <input type="text" name="first_name" wire:model.deffer:="first_name" id="first_name" autocomplete="given-name" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                             </div>
+                            @error('first_name')
+                              <span class="text-sm text-red-500">{{$message}}</span>
+                             @enderror
                             </div>
 
                             <div class="col-span-3">
