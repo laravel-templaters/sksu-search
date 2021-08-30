@@ -52,6 +52,8 @@ Route::middleware(['auth:sanctum', 'verified', 'role:admin'])->get('/register', 
     return view('register');
 })->name('register');
 
+Route::middleware(['auth:sanctum', 'verified', 'role:admin'])->get('/admin/manageusers', ManageUsers::class);
+
 Route::get('/dh/incoming', IncomingReq::class);
 Route::get('/dh/pending', PendingReq::class);
 Route::get('/dh/returns', ReturnedReq::class);
@@ -59,10 +61,7 @@ Route::get('/dh/view', ViewDv::class);
 
 
 //delete lng ni gab kung mag route ka na liwat
-Route::get('/admin/manageusers', ManageUsers::class);
-Route::get('/show',function(){
-    return view('profile.show');
-});
+//Route::get('/admin/manageusers', ManageUsers::class);
 
 // Route::get('/sec/dashboard', Dash::class);
 Route::get('/sec/newvoucher', CreateDv::class);

@@ -16,9 +16,9 @@ class PositionSeeder extends Seeder
     {
         DB::table('positions')->insert(
             [
-                ['position_name' => 'admin'], 
-                ['position_name' => 'department_head'], 
-                ['position_name' => 'secretariat']
+                ['position_name' => 'Admin'], 
+                ['position_name' => 'Department Head'], 
+                ['position_name' => 'Secretary']
             ]);
     }
 }
