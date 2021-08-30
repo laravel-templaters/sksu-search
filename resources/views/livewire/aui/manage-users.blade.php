@@ -72,7 +72,7 @@
                                             <span class="inline-flex items-center px-3 text-gray-500 border border-r-0 border-gray-300 rounded-l-md bg-gray-50 sm:text-sm">
                                             sksu-search.com/@
                                             </span>
-                                            <input type="text" name="username" wire:model:="username" id="username" autocomplete="username" class="flex-1 block w-full min-w-0 border-gray-300 rounded-none focus:ring-indigo-500 focus:border-indigo-500 rounded-r-md sm:text-sm">
+                                            <input type="text" name="username" wire:model.deffer:="username" id="username" autocomplete="username" class="flex-1 block w-full min-w-0 border-gray-300 rounded-none focus:ring-indigo-500 focus:border-indigo-500 rounded-r-md sm:text-sm">
                                     </div>
                                 </div>
                                 <div class="space-y-1 sm:col-span-4">
@@ -80,13 +80,13 @@
                                         Password
                                     </label>
                                     <div class="flex mt-1 rounded-md shadow-sm">
-                                        <input type="password" name="password" wire:model:="password" id="password" autocomplete="password" class="flex-1 block w-full min-w-0 border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 rounded-r-md sm:text-sm">
+                                        <input type="password" name="password" wire:model.deffer:="password" id="password" autocomplete="password" class="flex-1 block w-full min-w-0 border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 rounded-r-md sm:text-sm">
                                     </div>
                                     <label for="confirm_password" class="block pt-1 text-sm font-medium text-gray-700">
                                        Confirm Password
                                     </label>
                                     <div class="flex mt-1 rounded-md shadow-sm">
-                                        <input type="password" name="confirm_password"  wire:model:="confirm_password" id="password" autocomplete="password" class="flex-1 block w-full min-w-0 border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 rounded-r-md sm:text-sm">
+                                        <input type="password" name="confirm_password"   id="password" autocomplete="password" class="flex-1 block w-full min-w-0 border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 rounded-r-md sm:text-sm">
                                     </div>
                                     
                                 </div>
@@ -108,7 +108,7 @@
                                 First name
                             </label>
                             <div class="mt-1">
-                                <input type="text" name="first_name" wire:model:="first_name" id="first_name" autocomplete="given-name" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                <input type="text" name="first_name" wire:model.deffer:="first_name" id="first_name" autocomplete="given-name" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                             </div>
                             </div>
 
@@ -117,7 +117,7 @@
                                 Middle name
                             </label>
                             <div class="mt-1">
-                                <input type="text" name="middle_name" wire:model:="middle_name" id="middle_name" autocomplete="" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                <input type="text" name="middle_name" wire:model.deffer:="middle_name" id="middle_name" autocomplete="" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                             </div>
                             </div>
 
@@ -126,7 +126,7 @@
                                 Last name
                             </label>
                             <div class="mt-1">
-                                <input type="text" name="last_name" wire:model:="last_name" id="last_name" autocomplete="family-name" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                <input type="text" name="last_name" wire:model.deffer:="last_name" id="last_name" autocomplete="family-name" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                             </div>
                             </div>
 
@@ -135,7 +135,7 @@
                                 Email address
                             </label>
                             <div class="mt-1">
-                                <input id="email" name="email" wire:model:="email" type="email" autocomplete="email" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                <input id="email" name="email" wire:model.deffer:="email" type="email" autocomplete="email" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                             </div>
                             </div>
                             <div class="sm:col-span-2">
@@ -143,7 +143,7 @@
                                 Birthday
                             </label>
                             <div class="mt-1">
-                                <input id="birth_day" name="birth_day" wire:model:="birth_day" type="date"  class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                <input id="birth_day" name="birth_day" wire:model.deffer:="birth_day" type="date"  class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                             </div>
                             </div>
 
@@ -165,7 +165,7 @@
                                 Street address
                             </label>
                             <div class="mt-1">
-                                <input type="text" name="address" id="address" autocomplete="address" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                <input type="text" name="address" wire:model.deffer:="address" id="address" autocomplete="address" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                             </div>
                             </div>
 

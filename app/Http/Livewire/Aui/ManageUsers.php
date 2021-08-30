@@ -29,18 +29,17 @@ class ManageUsers extends Component
     public $photo;
 
     protected $rules = [
-        'first_name' => 'required',
-        'middle_name' => 'required',
-        'last_name' => 'required',
-        'address' => 'required',
-        'birth_day' => 'required',
-       // 'contact_number' => 'min:11|max:11',
-        'email' => 'required|email',
-        'username' => 'required',
-        'password' => 'required|min:8',
-        // 'role_id' => 'required',
-        // 'department_id' => 'required',
-        // 'position_id' => 'required',   
+         'first_name' => 'required',
+        //  'last_name' => 'required',
+        //  'address' => 'required',
+        //  'birth_day' => 'required',
+        //  'contact_number' => 'min:11|max:11',
+        //  'email' => 'required|email',
+        //  'username' => 'required',
+        //  'password' => 'required|min:8',
+        //  'role_id' => 'required',
+        //  'department_id' => 'required',
+        //  'position_id' => 'required',   
     ];
 
     public function render()
@@ -67,14 +66,14 @@ class ManageUsers extends Component
         $user->last_name = $this->last_name;
         $user->address = $this->address;
         $user->birth_day = $this->birth_day;
-        //$user->contact_number = $this->contact_number;
+        $user->contact_number = '09816237644';
         $user->email = $this->email;
         $user->username = $this->username;
         $user->password = $this->password;
-        // $user->role_id = $this->role_id;
-        // $user->department_id = $this->department_id;
-        // $user->position_id = $this->position_id;
-        $user->photo = $this->photo;
+        $user->role_id = 2;
+        $user->department_id =3;
+        $user->position_id = 1;
+        //$user->photo = $this->photo;
         $user->save();
 
         // User::create([
