@@ -72,7 +72,7 @@
                 <div class="relative items-center px-4 pt-5 overflow-hidden rounded-lg shadow sm:pt-6 sm:px-6 bg-blue-54">
                     <dt class="">
                         <p class="mx-auto text-lg font-bold text-center text-white text-shadow-lg wrap">No. of Incoming
-                            Request</p>
+                            Requests</p>
                     </dt>
                     <dd class="items-center pt-2 pb-6 mx-auto">
                         <p class="text-2xl font-semibold text-center ">
@@ -86,7 +86,7 @@
             <div class="relative items-center px-4 pt-5 overflow-hidden rounded-lg shadow sm:pt-6 sm:px-6 bg-blue-54">
                 <dt class="">
                     <p class="mx-auto text-lg font-bold text-center text-white text-shadow-lg wrap">No. of Outgoing
-                        Request</p>
+                        Requests</p>
                 </dt>
                 <dd class="items-center pt-2 pb-6 mx-auto">
                     <p class="text-2xl font-semibold text-center ">
@@ -100,7 +100,7 @@
             <div class="relative items-center px-4 pt-5 overflow-hidden rounded-lg shadow sm:pt-6 sm:px-6 bg-blue-54">
                 <dt class="">
                     <p class="mx-auto text-lg font-bold text-center text-white text-shadow-lg wrap">No. of Returned
-                        Request</p>
+                        Requests</p>
                 </dt>
                 <dd class="items-center pt-2 pb-6 mx-auto">
                     <p class="text-2xl font-semibold text-center ">
@@ -114,7 +114,7 @@
                 <div class="relative items-center px-4 pt-5 overflow-hidden rounded-lg shadow sm:pt-6 sm:px-6 bg-blue-54">
                     <dt class="">
                         <p class="mx-auto text-lg font-bold text-center text-white text-shadow-lg wrap">No. of  Pending
-                            Request</p>
+                            Requests</p>
                     </dt>
                     <dd class="items-center pt-2 pb-6 mx-auto">
                         <p class="text-2xl font-semibold text-center ">
