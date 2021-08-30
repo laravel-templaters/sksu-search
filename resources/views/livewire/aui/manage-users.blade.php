@@ -65,18 +65,18 @@
                                             <input type="text" name="username" id="username" autocomplete="username" class="flex-1 block w-full min-w-0 border-gray-300 rounded-none focus:ring-indigo-500 focus:border-indigo-500 rounded-r-md sm:text-sm">
                                     </div>
                                 </div>
-                                <div class="sm:col-span-4">
+                                <div class="space-y-1 sm:col-span-4">
                                     <label for="password" class="block text-sm font-medium text-gray-700">
                                         Password
                                     </label>
                                     <div class="flex mt-1 rounded-md shadow-sm">
-                                        <input type="password" name="password" id="password" autocomplete="password" class="flex-1 block w-full min-w-0 border-gray-300 rounded-none focus:ring-indigo-500 focus:border-indigo-500 rounded-r-md sm:text-sm">
+                                        <input type="password" name="password" id="password" autocomplete="password" class="flex-1 block w-full min-w-0 border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 rounded-r-md sm:text-sm">
                                     </div>
-                                    <label for="password" class="block text-sm font-medium text-gray-700">
-                                        Password
+                                    <label for="password" class="block pt-1 text-sm font-medium text-gray-700">
+                                       Confirm Password
                                     </label>
                                     <div class="flex mt-1 rounded-md shadow-sm">
-                                        <input type="password" name="password" id="password" autocomplete="password" class="flex-1 block w-full min-w-0 border-gray-300 rounded-none focus:ring-indigo-500 focus:border-indigo-500 rounded-r-md sm:text-sm">
+                                        <input type="password" name="password" id="password" autocomplete="password" class="flex-1 block w-full min-w-0 border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 rounded-r-md sm:text-sm">
                                     </div>
                                     
                                 </div>
@@ -187,41 +187,28 @@
                             </legend>
                             <div class="mt-4 space-y-4">
                                 <div class="relative flex items-start">
-                                <div class="flex items-center h-5">
-                                    <input id="comments" name="comments" type="checkbox" class="w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500">
-                                </div>
-                                <div class="ml-3 text-sm">
-                                    <label for="comments" class="font-medium text-gray-700">Comments</label>
-                                    <p class="text-gray-500">Get notified when someones posts a comment on a posting.</p>
-                                </div>
-                                </div>
-                            </div>
-                            </fieldset>
-                            <fieldset class="mt-6">
-                            <div>
-                                <legend class="text-base font-medium text-gray-900">
-                                Push Notifications
-                                </legend>
-                                <p class="text-sm text-gray-500">These are delivered via SMS to your mobile phone.</p>
-                            </div>
-                            <div class="mt-4 space-y-4">
-                                <div class="flex items-center">
-                                <input id="push-everything" name="push-notifications" type="radio" class="w-4 h-4 text-indigo-600 border-gray-300 focus:ring-indigo-500">
-                                <label for="push-everything" class="block ml-3 text-sm font-medium text-gray-700">
-                                    Everything
-                                </label>
-                                </div>
-                                <div class="flex items-center">
-                                <input id="push-email" name="push-notifications" type="radio" class="w-4 h-4 text-indigo-600 border-gray-300 focus:ring-indigo-500">
-                                <label for="push-email" class="block ml-3 text-sm font-medium text-gray-700">
-                                    Same as email
-                                </label>
-                                </div>
-                                <div class="flex items-center">
-                                <input id="push-nothing" name="push-notifications" type="radio" class="w-4 h-4 text-indigo-600 border-gray-300 focus:ring-indigo-500">
-                                <label for="push-nothing" class="block ml-3 text-sm font-medium text-gray-700">
-                                    No push notifications
-                                </label>
+                                    <div class="pl-3 space-y-1 sm:col-span-2">
+                                        <label for="zip" class="block text-sm font-medium text-gray-700">
+                                            Department
+                                        </label>
+                                        <select placeholder="--Select Department--" id="department" name="department" autocomplete="department" class="block w-full max-w-lg border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm">
+                                        @foreach ($departments as $department)
+                                        <option value="{{$department->id}}">{{$department->department_name}}</option>
+                                        @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="pl-3 space-y-1 sm:col-span-2">
+                                        <label for="zip" class="block text-sm font-medium text-gray-700">
+                                            Position
+                                        </label>
+                                        {{-- postions here --}}
+                                        <select placeholder="--Select Department--" id="department" name="department" autocomplete="department" class="block w-full max-w-lg border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm">
+                                        @foreach ($departments as $department)
+                                        <option value="{{$department->id}}">{{$department->department_name}}</option>
+                                        @endforeach
+                                        </select>
+                                        {{-- position here --}}
+                                    </div>
                                 </div>
                             </div>
                             </fieldset>
@@ -230,7 +217,7 @@
                     </div>
 
                     <div class="pt-5">
-                        <div class="flex justify-end">
+                        <div class="flex justify-start">
                         <button type="button" class="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                             Cancel
                         </button>

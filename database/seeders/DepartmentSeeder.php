@@ -14,8 +14,14 @@ class DepartmentSeeder extends Seeder
      */
     public function run()
     {
-         DB::table('departments')->insert([
+        DB::table('departments')->insert([
             'department_name'=> 'Accounting',
             ]);
+            DB::table('departments')->insert([
+                'department_name'=> 'Budget Office',
+                ]);
+                DB::table('departments')->insert([
+                    'department_name'=> 'Nursing',
+                    ]);
     }
 }
