@@ -220,7 +220,7 @@
                 <div>
                   <a href="/profile" class="">
                   @if(Laravel\Jetstream\Jetstream::managesProfilePhotos())
-                  <img src="{{Auth::user()->profile_photo_url }}" class="w-12 h-12 rounded-full" alt="">
+                  <img src="{{ Auth::user()->profile_photo_url }}" class="w-12 h-12 rounded-full" alt="">
                   @endif
                   </a>
                 </div>

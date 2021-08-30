@@ -60,6 +60,9 @@ Route::get('/dh/view', ViewDv::class);
 
 //delete lng ni gab kung mag route ka na liwat
 Route::get('/admin/manageusers', ManageUsers::class);
+Route::get('/show',function(){
+    return view('profile.show');
+});
 
 // Route::get('/sec/dashboard', Dash::class);
 Route::get('/sec/newvoucher', CreateDv::class);

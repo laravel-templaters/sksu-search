@@ -32,10 +32,12 @@
                      @foreach ($users as $user)
                      <li>
                         <div class="space-y-4">
-                            <img class="w-20 h-20 mx-auto rounded-full lg:w-24 lg:h-24" src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80" alt="">
+                         @if(Laravel\Jetstream\Jetstream::managesProfilePhotos())
+                        <img src="{{ $user->profile_photo_url }}" class="w-20 h-20 mx-auto rounded-full lg:w-24 lg:h-24" alt="{{$user->first_name}}">
+                        @endif
                             <div class="space-y-2">
                                 <div class="text-xs font-medium lg:text-sm">
-                                    <h3 class="text-blue-53">{{$user->first_name}}</h3>
+                                    <h3 class="uppercase text-blue-53">{{$user->first_name}} {{$user->middle_name}} {{$user->last_name}}</h3>
                                     <p class="text-indigo-600">{{$user->departments->department_name}}</p>
                                     <p class="text-indigo-600">Department Head</p>
                                 </div>
@@ -101,7 +103,7 @@
                             </p>
                         </div>
                         <div class="grid grid-cols-6 mt-6 gap-y-6 gap-x-4">
-                            <div class="col-span-2">
+                            <div class="col-span-3">
                             <label for="first-name" class="block text-sm font-medium text-gray-700">
                                 First name
                             </label>
@@ -110,7 +112,7 @@
                             </div>
                             </div>
 
-                            <div class="col-span-2">
+                            <div class="col-span-3">
                             <label for="first-name" class="block text-sm font-medium text-gray-700">
                                 Middle name
                             </label>
@@ -127,6 +129,7 @@
                                 <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                             </div>
                             </div>
+                            
 
                             <div class="sm:col-span-4">
                             <label for="email" class="block text-sm font-medium text-gray-700">
