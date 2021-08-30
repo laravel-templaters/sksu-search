@@ -76,7 +76,11 @@
                                             </span>
                                             <input type="text" name="username" wire:model.deffer:="username" id="username" autocomplete="username" class="flex-1 block w-full min-w-0 border-gray-300 rounded-none focus:ring-indigo-500 focus:border-indigo-500 rounded-r-md sm:text-sm">
                                     </div>
+                                    @error('username')
+                                    <span class="text-sm text-red-500">{{$message}}</span>
+                                      @enderror
                                 </div>
+                               
                                 <div class="space-y-1 sm:col-span-4">
                                     <label for="password" class="block text-sm font-medium text-gray-700">
                                         Password
@@ -84,13 +88,18 @@
                                     <div class="flex mt-1 rounded-md shadow-sm">
                                         <input type="password" name="password" wire:model.deffer:="password" id="password" autocomplete="password" class="flex-1 block w-full min-w-0 border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 rounded-r-md sm:text-sm">
                                     </div>
-                                    <label for="confirm_password" class="block pt-1 text-sm font-medium text-gray-700">
+                                    @error('password')
+                                    <span class="text-sm text-red-500">{{$message}}</span>
+                                    @enderror
+                                    <label for="password_confirmation" class="block pt-1 text-sm font-medium text-gray-700">
                                        Confirm Password
                                     </label>
                                     <div class="flex mt-1 rounded-md shadow-sm">
-                                        <input type="password" name="confirm_password"  wire:model.deffer:="confirm_password" id="password" autocomplete="password" class="flex-1 block w-full min-w-0 border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 rounded-r-md sm:text-sm">
+                                        <input type="password" name="password_confirmation"  wire:model.deffer:="password_confirmation" id="password" autocomplete="password" class="flex-1 block w-full min-w-0 border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500 rounded-r-md sm:text-sm">
                                     </div>
-                                    
+                                    @error('password_confirmation')
+                                    <span class="text-sm text-red-500">{{$message}}</span>
+                                    @enderror
                                 </div>
                             </div>
                         </div>
@@ -124,7 +133,11 @@
                             <div class="mt-1">
                                 <input type="text" name="middle_name" wire:model.deffer:="middle_name" id="middle_name" autocomplete="" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                             </div>
+                            @error('middle_name')
+                                    <span class="text-sm text-red-500">{{$message}}</span>
+                            @enderror
                             </div>
+                            
 
                             <div class="col-span-2">
                             <label for="last_name" class="block text-sm font-medium text-gray-700">
@@ -133,25 +146,32 @@
                             <div class="mt-1">
                                 <input type="text" name="last_name" wire:model.deffer:="last_name" id="last_name" autocomplete="family-name" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                             </div>
+                            @error('last_name')
+                            <span class="text-sm text-red-500">{{$message}}</span>
+                             @enderror
                             </div>
+                           
                             <div class="col-span-1">
-                            <label for="last_name" class="block text-sm font-medium text-gray-700">
+                            <label for="suffix" class="block text-sm font-medium text-gray-700">
                                 Suffix
                             </label>
                             <div class="mt-1">
-                                <input type="text" name="last_name" wire:model.deffer:="suffix" id="last_name" autocomplete="family-name" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                            </div>
-                            </div>
-
-                            <div class="col-span-2 col-start-5">
-                            <label for="last_name" class="block text-sm font-medium text-gray-700">
-                                Contact
-                            </label>
-                            <div class="mt-1">
-                                <input type="text" name="last_name" wire:model.deffer:="suffix" id="last_name" autocomplete="family-name" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                <input type="text" name="suffix" wire:model.deffer:="suffix" id="suffix" autocomplete="family-name" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                             </div>
                             </div>
                             
+
+                            <div class="col-span-2 col-start-5">
+                            <label for="contact_number" class="block text-sm font-medium text-gray-700">
+                                Contact
+                            </label>
+                            <div class="mt-1">
+                                <input type="text" name="contact_number" wire:model.deffer:="contact_number" id="contact_number" autocomplete="family-name" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                            </div>
+                            @error('contact_number')
+                                    <span class="text-sm text-red-500">{{$message}}</span>
+                            @enderror
+                            </div>                                               
 
                             <div class="sm:col-span-4">
                             <label for="email" class="block text-sm font-medium text-gray-700">
@@ -160,7 +180,12 @@
                             <div class="mt-1">
                                 <input id="email" name="email" wire:model.deffer:="email" type="email" autocomplete="email" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                             </div>
+                            @error('email')
+                                    <span class="text-sm text-red-500">{{$message}}</span>
+                            @enderror
                             </div>
+                            
+
                             <div class="sm:col-span-2">
                             <label for="birth_day" class="block text-sm font-medium text-gray-700">
                                 Birthday
@@ -168,7 +193,11 @@
                             <div class="mt-1">
                                 <input id="birth_day" name="birth_day" wire:model.deffer:="birth_day" type="date"  class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                             </div>
+                            @error('birth_day')
+                                    <span class="text-sm text-red-500">{{$message}}</span>
+                            @enderror
                             </div>
+                            
 
                             {{-- <div class="sm:col-span-3">
                             <label for="country" class="block text-sm font-medium text-gray-700">
@@ -190,7 +219,11 @@
                             <div class="mt-1">
                                 <input type="text" name="address" wire:model.deffer:="address" id="address" autocomplete="address" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                             </div>
+                            @error('address')
+                            <span class="text-sm text-red-500">{{$message}}</span>
+                            @enderror
                             </div>
+                           
 
                             <div class="sm:col-span-2">
                             <label for="city" class="block text-sm font-medium text-gray-700">
@@ -228,7 +261,7 @@
                                         <span class="overflow-hidden bg-gray-100 rounded-full h-14 w-14">
                                             <img src="">
                                         </span>
-                                        <input type="file" class="px-3 py-2 ml-5 text-sm font-medium leading-4 text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"> 
+                                        <input type="file" wire:model.deffer="photo" class="px-3 py-2 ml-5 text-sm font-medium leading-4 text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"> 
                                         
                                     </div>
                                 </div>
@@ -258,7 +291,7 @@
                                         <label for="zip" class="block text-sm font-medium text-gray-700">
                                             Department
                                         </label>
-                                        <select placeholder="--Select Department--" id="department" name="department" autocomplete="department" class="block w-full max-w-lg border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm">
+                                        <select placeholder="--Select Department--" wire:model.deffer="department_id" id="department" name="department" autocomplete="department" class="block w-full max-w-lg border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm">
                                         @foreach ($departments as $department)
                                         <option value="{{$department->id}}">{{$department->department_name}}</option>
                                         @endforeach
@@ -269,7 +302,7 @@
                                             Position
                                         </label>
                                         {{-- postions here --}}
-                                        <select placeholder="--Select Department--" id="position" name="department" autocomplete="department" class="block w-full max-w-lg border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm">
+                                        <select placeholder="--Select Department--" wire:model.deffer="position_id" id="position" name="department" autocomplete="department" class="block w-full max-w-lg border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm">
                                         @foreach ($positions as $position)
                                         <option value="{{$position->id}}">{{$position->position_name}}</option>
                                         @endforeach
@@ -281,7 +314,7 @@
                                             Role
                                         </label>
                                         {{-- Roles here --}}
-                                        <select placeholder="--Select Department--" id="role" name="department" autocomplete="department" class="block w-full max-w-lg border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm">
+                                        <select placeholder="--Select Department--" wire:model.deffer="role_id" id="role" name="department" autocomplete="department" class="block w-full max-w-lg border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm">
                                         @foreach ($roles as $role)
                                         <option value="{{$role->id}}">{{$role->role_name}}</option>
                                         @endforeach
