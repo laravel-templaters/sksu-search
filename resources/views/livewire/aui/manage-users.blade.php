@@ -49,6 +49,8 @@
             </div>
         </div>
     </div>
+
+    
     {{-- form --}}
     <div class="bg-white rounded-lg">
         <div class="px-6 py-6 mx-auto" id="newuser">
@@ -98,8 +100,8 @@
                             Use a permanent address where you can receive mail.
                             </p>
                         </div>
-                        <div class="grid grid-cols-1 mt-6 gap-y-6 gap-x-4 sm:grid-cols-6">
-                            <div class="sm:col-span-3">
+                        <div class="grid grid-cols-6 mt-6 gap-y-6 gap-x-4">
+                            <div class="col-span-2">
                             <label for="first-name" class="block text-sm font-medium text-gray-700">
                                 First name
                             </label>
@@ -108,7 +110,16 @@
                             </div>
                             </div>
 
-                            <div class="sm:col-span-3">
+                            <div class="col-span-2">
+                            <label for="first-name" class="block text-sm font-medium text-gray-700">
+                                Middle name
+                            </label>
+                            <div class="mt-1">
+                                <input type="text" name="middle-name" id="middle-name" autocomplete="" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                            </div>
+                            </div>
+
+                            <div class="col-span-2">
                             <label for="last-name" class="block text-sm font-medium text-gray-700">
                                 Last name
                             </label>
@@ -123,6 +134,14 @@
                             </label>
                             <div class="mt-1">
                                 <input id="email" name="email" type="email" autocomplete="email" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                            </div>
+                            </div>
+                            <div class="sm:col-span-2">
+                            <label for="email" class="block text-sm font-medium text-gray-700">
+                                Birthday
+                            </label>
+                            <div class="mt-1">
+                                <input id="birthday" name="email" type="date"  class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                             </div>
                             </div>
 
@@ -174,7 +193,24 @@
                                 <input type="text" name="zip" id="zip" autocomplete="postal-code" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                             </div>
                             </div>
+                            
+                            <div class="col-span-4">
+                                <label for="zip" class="block text-sm font-medium text-gray-700">
+                                    Profile photo
+                                </label>
+                                <div class="col-span-2 mt-1">
+                                    <div class="flex items-center">
+                                        <span class="overflow-hidden bg-gray-100 rounded-full h-14 w-14">
+                                            <img src="https://images.unsplash.com/photo-1584016235603-290a5f94af4a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1402&q=80">
+                                        </span>
+                                        <input type="file" class="px-3 py-2 ml-5 text-sm font-medium leading-4 text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"> 
+                                        
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        
+                        
                         </div>
 
                         <div class="pt-8">
