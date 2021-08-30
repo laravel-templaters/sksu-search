@@ -185,7 +185,7 @@
                                 Street address
                             </label>
                             <div class="mt-1">
-                                <input type="text" name="address" id="address" autocomplete="address" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                <input type="text" name="address" wire:model.deffer:="address" id="address" autocomplete="address" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                             </div>
                             </div>
 
