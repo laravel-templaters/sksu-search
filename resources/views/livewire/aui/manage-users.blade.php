@@ -9,7 +9,10 @@
                             @if($selectedDept=="")
                             Sultan Kudarat State University
                             @else
-                                {{$selectedDept}}
+                            @foreach ($users as $user)
+                            {{$user->departments->department_name}}
+                            @endforeach
+                                
                             @endif
                             </p>
                             <label for="country" class="block pl-1 font-medium text-gray-700 text-md sm:mt-px sm:pt-2">
