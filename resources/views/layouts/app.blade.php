@@ -225,7 +225,7 @@
                   </a>
                 </div>
                 <div class="ml-3">
-                  <p class="font-medium text-md text-blue-53 drop-shadow-lg">
+                  <p class="font-medium text-md text-blue-53 drop-shadow-lg truncate">
                     {{auth()->user()->first_name}}
                   </p>
                   <a href="{{ route('logout') }}"
