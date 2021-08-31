@@ -35,7 +35,7 @@ class ManageUsers extends Component
     public $position_id=1;
     public $photo;
 
-
+    
 
     public function render()
     { 

@@ -82,7 +82,7 @@
           </div>
           <nav class="px-2 mt-5 space-y-1">
             <!-- Current: "bg-indigo-800 text-white", Default: "text-white hover:bg-blue-51 hover:bg-opacity-75" -->
-            <a href="/dashboard" class="flex items-center px-2 py-2 font-bold text-white rounded-md bg-blue-53 group text-md">
+            <a href="/redirects" class="flex items-center px-2 py-2 font-bold text-white rounded-md bg-blue-53 group text-md">
               <!-- Heroicon name: outline/home -->
               <svg class="flex-shrink-0 w-6 h-6 mr-3 text-blue-51" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
@@ -153,7 +153,7 @@
             <nav class="flex-1 px-2 mt-5 space-y-1">
 
               <!-- Current: "bg-blue-53 text-white" svg : "text-blue-51", Default: "text-white hover:bg-blue-51 hover:bg-opacity-75 " svg: "" -->
-              <a href="{{auth()->user()->role_id == 2 ? '/sec/dashboard' : '/dashboard'}}" class="{{ is_active(url('/dashboard')) ? 'flex items-center px-2 py-2 font-bold text-white rounded-md bg-blue-53 group text-md' : 'flex items-center px-2 py-2 font-bold rounded-md text-blue-53 hover:bg-blue-51 hover:bg-opacity-75 group text-md'}}">
+              <a href="{{auth()->user()->role_id == 3 ? '/sec/dashboard' : '/dashboard'}}" class="{{ is_active(url('/dashboard')) ? 'flex items-center px-2 py-2 font-bold text-white rounded-md bg-blue-53 group text-md' : 'flex items-center px-2 py-2 font-bold rounded-md text-blue-53 hover:bg-blue-51 hover:bg-opacity-75 group text-md'}}">
                 <!-- Heroicon name: outline/home -->
                 <svg class="{{ is_active(url('/dashboard')) ? 'flex-shrink-0 w-6 h-6 mr-3 text-blue-51' : 'flex-shrink-0 w-6 h-6 mr-3 text-blue-53'}}" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
@@ -225,7 +225,7 @@
                   </a>
                 </div>
                 <div class="ml-3">
-                  <p class="font-medium text-md text-blue-53 drop-shadow-lg truncate">
+                  <p class="font-medium truncate text-md text-blue-53 drop-shadow-lg">
                     {{auth()->user()->first_name}}
                   </p>
                   <a href="{{ route('logout') }}"

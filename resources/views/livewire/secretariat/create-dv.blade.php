@@ -8,8 +8,8 @@
                             {{-- step 1 --}}
                             <li class="relative overflow-hidden lg:flex-1">
                                 <div class="overflow-hidden border border-b-0 border-gray-200 rounded-t-md lg:border-0">
-                                    <!-- Completed Step -->
-                                    <a href="#" class="group">
+                                    <!-- step 1-->
+                                    <a href="#" class="group" wire:click.prevent="validateForm(1)">
                                         <span x-bind:class="isstep1open ? 'absolute top-0 left-0 w-1 h-full bg-blue-53 lg:w-full lg:h-1 lg:bottom-0 lg:top-auto' : 'absolute top-0 left-0 w-1 h-full bg-transparent group-hover:bg-gray-200 lg:w-full lg:h-1 lg:bottom-0 lg:top-auto'"
                                             aria-hidden="true"></span>
                                         <span class="flex items-start px-6 py-5 text-sm font-medium">
@@ -48,7 +48,7 @@
                             <li class="relative overflow-hidden lg:flex-1">
                                 <div class="overflow-hidden border border-gray-200 lg:border-0">
                                     <!-- Current Step -->
-                                    <a href="#" aria-current="step">
+                                    <a href="#" aria-current="step" wire:click.prevent="validateForm(2)">
                                         <span x-bind:class="isstep2open ? 'absolute top-0 left-0 w-1 h-full bg-blue-53 lg:w-full lg:h-1 lg:bottom-0 lg:top-auto' : 'absolute top-0 left-0 w-1 h-full bg-transparent group-hover:bg-gray-200 lg:w-full lg:h-1 lg:bottom-0 lg:top-auto'"></span>
                                         <span class="flex items-start px-6 py-5 text-sm font-medium lg:pl-9">
                                             <span class="flex-shrink-0">
@@ -134,86 +134,103 @@
                     x-transition:leave="transform transition ease-in-out duration-300 sm:duration-300"
                     x-transition:leave-start="-translate-x-0" x-transition:leave-end="-translate-x-full">
                         <div class="px-4 py-5 bg-white shadow sm:rounded-lg sm:p-6">
-                            <div class="md:grid md:grid-cols-3 md:gap-6">
-                                <div class="md:col-span-1">
-                                    <h3 class="text-lg font-medium leading-6 text-gray-900">Personal Information</h3>
+                            <div class="grid grid-cols-3 gap-6 divide-x-2 divide-gray-300">
+                                <div class="space-y-2 md:col-span-1">
+                                    <h3 class="text-xl font-medium leading-6 text-gray-900">Disbursement Voucher</h3>
                                     <p class="mt-1 text-sm text-gray-500">
-                                        Use a permanent address where you can receive mail.
                                     </p>
+                                    <input class="p-2 text-sm border-gray-500 rounded-lg" type="text" wire:model.debounce.500ms="searchuser" placeholder="Search here first...">
+                                    <div class="grid grid-cols-3 gap-2 px-2 pt-2 mx-auto">
+                                       @if($searchedusers->count() > 0) 
+                                            @foreach($searchedusers as $searcheduser)
+                                            <div class="col-span-1 space-x-1">
+                                                <button class="" wire:click="sUid({{$searcheduser->id}})">
+                                                <img src="{{asset($searcheduser->profile_photo_url)}}" class="w-20 h-20 mx-auto rounded-full lg:w-24 lg:h-24">
+                                                <p class="mt-1 text-sm text-blue-53">
+                                                {{$searcheduser->first_name}} {{$searcheduser->middle_name}}  {{$searcheduser->last_name}} 
+                                                </p>                                        
+                                                </button>
+                                            </div>                                    
+                                            @endforeach
+                                        @else
+                                            <div class="col-span-3">
+                                                <p class="mt-1 text-sm text-gray-500">
+                                                No Employee found with '{{$searchuser}}'
+                                                </p>
+                                            </div>
+                                        @endif
+                                    </div>
                                 </div>
-                                <div class="mt-5 md:mt-0 md:col-span-2">
-                                    <form action="#" method="">
+                                <div class="col-span-2 pl-2 mt-0">
+                                {{-- form here --}}
+                                    <form action="#" method=""> 
                                         <div class="grid grid-cols-6 gap-6">
-                                            <div class="col-span-6 sm:col-span-3">
-                                                <label for="first-name" class="block text-sm font-medium text-gray-700">First
+                                            
+
+
+
+                                            <div class="col-span-3">
+                                                <label for="first-name" class="block text-sm font-medium text-gray-700">Payee first
                                                     name</label>
-                                                <input type="text" wire:model="name" name="first-name" id="first-name" autocomplete="given-name"
-                                                    class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" >
-                                                    @error('name')
+                                                <input type="text" wire:model="fn" name="first-name" id="first-name" autocomplete="given-name"
+                                                    class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" disabled >
+                                                    @error('first_name')
                                                     <span class="text-sm text-red-500">{{$message}}</span>
                                                     @enderror
                                             </div>
 
-                                            <div class="col-span-6 sm:col-span-3">
-                                                <label for="last-name" class="block text-sm font-medium text-gray-700">Last
+                                            <div class="col-span-3">
+                                                <label for="last-name" class="block text-sm font-medium text-gray-700">Payee last
                                                     name</label>
-                                                <input type="text" name="last-name" id="last-name" autocomplete="family-name"
-                                                    class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" >
-                                            </div>
-
-                                            <div class="col-span-6 sm:col-span-4">
-                                                <label for="email-address" class="block text-sm font-medium text-gray-700">Email
-                                                    address</label>
-                                                <input type="text" name="email-address" id="email-address" autocomplete="email"
-                                                    class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" >
-                                            </div>
-
-                                            <div class="col-span-6 sm:col-span-3">
-                                                <label for="country" class="block text-sm font-medium text-gray-700">Country /
-                                                    Region</label>
-                                                <select id="country" name="country" autocomplete="country"
-                                                    class="block w-full px-3 py-2 mt-1 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" >
-                                                    <option>United States</option>
-                                                    <option>Canada</option>
-                                                    <option>Mexico</option>
-                                                </select>
+                                                <input type="text" wire:model="ln" name="last-name" id="last-name" autocomplete="family-name"
+                                                    class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" disabled>
                                             </div>
 
                                             <div class="col-span-6">
-                                                <label for="street-address"
-                                                    class="block text-sm font-medium text-gray-700">Street
-                                                    address</label>
-                                                <input type="text" name="street-address" id="street-address"
-                                                    autocomplete="street-address"
-                                                    class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" >
+                                                <label for="entity_title" class="block text-sm font-medium text-gray-700">Entity Title</label>
+                                                <input wire:model="entity_title" type="text" name="entity_title" id="entity_title" 
+                                                    class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                                    @error('entity_title')
+                                                    <span class="text-sm text-red-600">{{$message}}</span>
+                                                    @enderror
                                             </div>
 
-                                            <div class="col-span-6 sm:col-span-6 lg:col-span-2">
-                                                <label for="city" class="block text-sm font-medium text-gray-700">City</label>
-                                                <input type="text" name="city" id="city"
-                                                    class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" >
+                                            {{-- mode of payment --}}
+                                            <div class="col-span-2">
+                                                <label for="mode_of_payment" class="block text-sm font-medium text-gray-700">Mode Of Payment</label>
+                                                <select wire:model="mode_of_payment" 
+                                                    class="block w-full px-3 py-2 mt-1 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" >
+                                                    <option value="1">Cash</option>
+                                                    <option value="2">Check</option>
+                                                </select>
                                             </div>
 
-                                            <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                                <label for="state" class="block text-sm font-medium text-gray-700">State /
-                                                    Province</label>
-                                                <input type="text" name="state" id="state"
-                                                    class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" >
+                                            {{-- DV Category --}}
+                                            <div class="col-span-2">
+                                                <label for="dv_category" class="block text-sm font-medium text-gray-700">DV Category</label>
+                                                <select wire:model="dv_category_id" 
+                                                    class="block w-full px-3 py-2 mt-1 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" >
+                                                    <option value="1">Cash Advance</option>
+                                                    <option value="2">Purchase Order</option>
+                                                    <option value="3">Other Payments</option>
+                                                </select>
                                             </div>
 
-                                            <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                                <label for="postal-code" class="block text-sm font-medium text-gray-700">ZIP /
-                                                    Postal</label>
-                                                <input type="text" name="postal-code" id="postal-code"
-                                                    autocomplete="postal-code"
-                                                    class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" >
+                                            {{-- DV Type --}}
+                                            <div class="col-span-2">
+                                                <label for="dv_type" class="block text-sm font-medium text-gray-700">DV Type</label>
+                                                <select wire:model="dv_type_id" 
+                                                    class="block w-full px-3 py-2 mt-1 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" >
+                                                    <option value="1">Payroll</option>
+                                                    <option value="2">Travel Order</option>
+                                                </select>
                                             </div>
-                                            <div class="col-span-6 sm:col-span-3 lg:col-span-2" >
-                                                <input type="submit" wire:click.prevent="validateForm(2)"
-                                                class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" >
+                                            <div class="justify-end col-span-2" >
+                                                <button class="block w-full py-2 mt-3 text-lg border-gray-300 rounded-lg shadow-sm bg-blue-54 focus:ring-indigo-500 focus:border-indigo-500" wire:click.prevent="validateForm(2)"> Proceed </button>
                                                 
                                                 
                                             </div>
+                                            
                                         </div>
                                     </form>
                                 </div>
@@ -240,7 +257,7 @@
 
 
 
-                {{-- 2nd step Attachments --}}
+                {{-- 2nd step Signatories --}}
 
 
                 <div class="">
@@ -255,9 +272,8 @@
                         <div class="px-4 py-5 bg-white shadow sm:rounded-lg sm:p-6">
                             <div class="md:grid md:grid-cols-3 md:gap-6">
                                 <div class="md:col-span-1">
-                                    <h3 class="text-lg font-medium leading-6 text-gray-900">This is page 2</h3>
+                                    <h3 class="text-lg font-medium leading-6 text-gray-900">Signatories Here</h3>
                                     <p class="mt-1 text-sm text-gray-500">
-                                        Use a permanent address where you can receive mail.
                                     </p>
                                 </div>
                                 <div class="mt-5 md:mt-0 md:col-span-2">
@@ -266,7 +282,7 @@
                                             <div class="col-span-6 sm:col-span-3">
                                                 <label for="first-name" class="block text-sm font-medium text-gray-700">First
                                                     name</label>
-                                                <input type="text" wire:model="name" name="first-name" id="first-name" autocomplete="given-name"
+                                                <input type="text" wire:model="fn" name="first-name" id="first-name" autocomplete="given-name"
                                                     class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" >
                                                     @error('name')
                                                     <span class="text-red-600">{{$message}}</span>
