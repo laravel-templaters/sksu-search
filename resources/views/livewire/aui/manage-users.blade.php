@@ -33,7 +33,7 @@
                      <li>
                         <div class="space-y-4">
                          @if(Laravel\Jetstream\Jetstream::managesProfilePhotos())
-                        <img src="{{ $user->profile_photo_url }}" class="w-20 h-20 mx-auto rounded-full lg:w-24 lg:h-24" alt="{{$user->first_name}}">
+                        <img src="{{asset($user->profile_photo_url)}}" class="w-20 h-20 mx-auto rounded-full lg:w-24 lg:h-24" alt="{{$user->first_name}}">
                         @endif
                             <div class="space-y-2">
                                 <div class="text-xs font-medium lg:text-sm">
@@ -259,7 +259,9 @@
                                 <div class="col-span-2 mt-1">
                                     <div class="flex items-center">
                                         <span class="overflow-hidden bg-gray-100 rounded-full h-14 w-14">
-                                            <img src="">
+                                            @if ($photo)
+                                                <img src="{{ $photo->temporaryUrl() }}">
+                                            @endif
                                         </span>
                                         <input type="file" wire:model.deffer="photo" class="px-3 py-2 ml-5 text-sm font-medium leading-4 text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"> 
                                         

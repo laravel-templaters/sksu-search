@@ -84,9 +84,10 @@ class ManageUsers extends Component
                 $user->role_id =  $this->role_id;
                 $user->department_id = $this->department_id;
                 $user->position_id = $this->position_id;
-                $user->photo = $this->photo;
+                $user->profile_photo_path = $this->photo->storePublicly('profile-photos');
                 $user->save();
-                $this->photo->store('profile-photos');
+
+                
            
                 $this->alert('success', 'Successfully Added!', [
                     'background' => '#ccffcc',
