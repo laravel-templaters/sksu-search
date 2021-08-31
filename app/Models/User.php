@@ -60,6 +60,10 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
+    public function disbursement_vouchers(){
+        return $this->hasMany('App\Models\DisbursementVoucher');
+    }
+
     public function role(){
         return $this->hasOne('App\Models\Roles');
     }
