@@ -14,7 +14,15 @@ class CreateDisbursementVouchersTable extends Migration
     public function up()
     {
         Schema::create('disbursement_vouchers', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('dv_number');
+            $table->foreignId('user_id');
+            $table->foreignId('mop_id');
+            $table->foreignId('receipt_id');
+            $table->foreignId('dv_type_id');
+            $table->foreignId('doc_scheme_id');
+            $table->foreignId('fund_cluster_id');
+            $table->foreignId('status_id');
             $table->timestamps();
         });
     }
