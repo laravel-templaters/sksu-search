@@ -23,6 +23,7 @@ class admminseeder extends Seeder
             'birth_day'=>  Carbon::create('2000', '01', '01'),   
             'contact_number'=>'09123456789',        
             'email'=>'kha@admin.com',
+            'employee_number'=>'0000001',
             'username'=> 'admin',
             'password'=> Hash::make('searchadmin0123'),
             'role_id'=>1,

@@ -14,7 +14,12 @@ class CreateParticularsTable extends Migration
     public function up()
     {
         Schema::create('particulars', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->foreignId('disbursement_voucher_id');
+            $table->string('entry');
+            $table->string('responsibility_center');
+            $table->string('mfo_pap');
+            $table->string('amount');
             $table->timestamps();
         });
     }
