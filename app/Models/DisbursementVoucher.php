@@ -20,22 +20,6 @@ class DisbursementVoucher extends Model
         return $this->hasOne('App\Models\ModeOfPayment');
     }
 
-    public function receipt(){
-        return $this->hasOne('App\Models\Receipt');
-    }
-
-    public function dv_type(){
-        return $this->hasOne('App\Models\DVType');
-    }
-
-    public function document_scheme(){
-        return $this->hasOne('App\Models\DocumentScheme');
-    }
-
-    public function fund_cluster(){
-        return $this->hasOne('App\Models\FundCluster');
-    }
-
     public function status(){
         return $this->hasOne('App\Models\Status');
     }
@@ -43,10 +27,4 @@ class DisbursementVoucher extends Model
     public function note(){
         return $this->hasMany('App\Models\Note');
     }
-
-    public function accounting_entry(){
-        return $this->hasOne('App\Models\AccountingEntry');
-    }
-
-
 }
