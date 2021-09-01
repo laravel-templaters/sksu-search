@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Secretariat;
 
+use App\Models\User;
 use Livewire\Component;
 
 class CreateDv extends Component
@@ -15,21 +16,32 @@ class CreateDv extends Component
     public $step2finished = false;
     public $step3finished = false;
 
+    //variable forsearch
+    public $searchuser;
+    public $searchedusers;
+    
+    //variable for first name and last name
+    public $fn;
+    public $ln;
 
     //form variables for wire model
-    //example only
-    public $name;
-
+    public $user_id;
+    public $mode_of_payment;
+    public $dv_type_id;
+    public $dv_category_id;
+    public $entity_title;
 
 
     public function render()
     {
-        return view('livewire.secretariat.create-dv');
+        $this->searchedusers= User::where('first_name',"LIKE","%{$this->searchuser}%")->orWhere('middle_name',"LIKE","%{$this->searchuser}%")->orWhere('last_name',"LIKE","%{$this->searchuser}%")->get();
+        return view('livewire.secretariat.create-dv')->with('searchedusers', $this->searchedusers);
+       
     }
 
     public function validateForm($to){
         $this->validate([
-            'name'=>'required'
+            'entity_title'=>'required'
         ]);
         switch ($to) {
             case 1:
@@ -43,6 +55,15 @@ class CreateDv extends Component
                 $this->openstep3();
             break;
             
+        }
+    }
+
+    public function sUid($id){
+        $this->user_id=$id;
+        $names=User::where('id',$id)->get();
+        foreach($names as $name){
+            $this->fn=$name->first_name;
+            $this->ln=$name->last_name;
         }
     }
 

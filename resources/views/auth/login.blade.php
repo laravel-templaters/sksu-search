@@ -9,11 +9,18 @@
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
-
+        
         @if (session('status'))
         <div class="mb-4 text-sm font-medium text-green-600">
             {{ session('status') }}
         </div>
+        @endif
+        @if(auth()->user() != null)
+           <?php
+                header('Location: redirects');
+                exit;
+            ?>
+           
         @endif
 
         <form method="POST"  action="{{ route('login') }}">
