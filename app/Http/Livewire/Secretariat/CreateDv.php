@@ -5,7 +5,7 @@ namespace App\Http\Livewire\Secretariat;
 use App\Models\User;
 use App\Models\Particular;
 use Livewire\Component;
-
+use Illuminate\Support\Facades\DB;
 class CreateDv extends Component
 {
     //panels
@@ -20,6 +20,10 @@ class CreateDv extends Component
     //variable forsearch
     public $searchuser;
     public $searchedusers;
+
+    //variable for signatory search
+    public $searchsignatory = "";
+    public $searchedsignatories;
     
     //variable for first name and last name
     public $fn;
@@ -37,13 +41,23 @@ class CreateDv extends Component
      public $updateMode = false;
      public $inputs = [];
      public $i = 1;
+     //var for signatory
+     public $sig_id;
 
 
     public function render()
     {
-        $this->searchedusers= User::where('first_name',"LIKE","%{$this->searchuser}%")->orWhere('middle_name',"LIKE","%{$this->searchuser}%")->orWhere('last_name',"LIKE","%{$this->searchuser}%")->get();
-        return view('livewire.secretariat.create-dv')->with('searchedusers', $this->searchedusers);
+        $this ->searchedsignatories = User::whereRaw("(lower(first_name) like '%".strtolower($this->searchsignatory) ."%' or lower(middle_name) like '%".strtolower($this->searchsignatory)."%' or lower(last_name) like '%".strtolower($this->searchsignatory)."%') and role_id = 2")
+        ->get();
+
+        $this->searchedusers= User::where(DB::raw('lower(first_name)'),"LIKE","%".strtolower($this->searchuser)."%")->orWhere(DB::raw('lower(middle_name)'),"LIKE","%".strtolower($this->searchuser)."%")->orWhere(DB::raw('lower(last_name)'),"LIKE","%".strtolower($this->searchuser)."%")->get();
+
+        return view('livewire.secretariat.create-dv')->with('searchedusers', $this->searchedusers)->with('searchedsignatories', $this->searchedsignatories);
        
+    }
+
+    public function setsignatory($id){
+        $this->sig_id = $id;
     }
 
     //dynamic input field methods START ----------
@@ -125,9 +139,7 @@ class CreateDv extends Component
     //methods Store Particulars  END-----------
 
     public function validateForm($to){
-        $this->validate([
-          
-        ]);
+        
         switch ($to) {
             case 1:
                 $this->openstep1();

@@ -308,7 +308,7 @@
                                             </div>
                                             
                                             <div class="justify-end col-span-4 col-start-2" >
-                                            <button class="block w-full py-2 mt-3 text-lg border-gray-300 rounded-lg shadow-sm bg-blue-54 focus:ring-indigo-500 focus:border-indigo-500" wire:click.prevent="storeParticulars()"> Proceed </button>
+                                            <button class="block w-full py-2 mt-3 text-lg border-gray-300 rounded-lg shadow-sm bg-blue-54 focus:ring-indigo-500 focus:border-indigo-500" wire:click.prevent="validateForm(2)"> Proceed </button>
                                                 
                                                 
                                             </div>
@@ -325,19 +325,6 @@
                 </div>
 
 
-
-                
-
-
-
-
-
-
-
-
-
-
-
                 {{-- 2nd step Signatories --}}
 
 
@@ -350,69 +337,51 @@
                     x-transition:enter="transform transition ease-in-out duration-700 sm:duration-700"
                     x-transition:enter-start="translate-x-full"
                     x-transition:enter-end="translate-x-0">
-                        <div class="px-4 py-5 bg-white shadow sm:rounded-lg sm:p-6">
-                            <div class="md:grid md:grid-cols-3 md:gap-6">
-                                <div class="md:col-span-1">
-                                    <h3 class="text-lg font-medium leading-6 text-gray-900">Signatories Here</h3>
-                                    <p class="mt-1 text-sm text-gray-500">
-                                    </p>
+                           <div class="bg-white rounded-md">
+                            <div class="px-4 py-12 mx-auto max-w-7xl sm:px-6 lg:px-8 lg:py-24">
+                                <div class="space-y-12">
+                                <div class="space-y-5 sm:space-y-4 md:max-w-xl lg:max-w-3xl xl:max-w-none">
+                                    <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Select Signatory</h2>
+                                    <p class="text-xl text-gray-500">Please select appropriate signatory for your Disbursement voucher application. You may start by searching...</p>
                                 </div>
-                                <div class="mt-5 md:mt-0 md:col-span-2">
-                                    <form action="#" method="">
-                                        <div class="grid grid-cols-6 gap-6">
-                                            <div class="col-span-6 sm:col-span-3">
-                                                <label for="first-name" class="block text-sm font-medium text-gray-700">First
-                                                    name</label>
-                                                <input type="text" wire:model="fn" name="first-name" id="first-name" autocomplete="given-name"
-                                                    class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" >
-                                                    @error('name')
-                                                    <span class="text-red-600">{{$message}}</span>
-                                                    @enderror
-                                            </div>
+                            <input class="w-1/2 p-2 text-sm border-gray-500 rounded-lg" type="text" wire:model.debounce.500ms="searchsignatory" placeholder="Search here...">
+                                <ul role="list" class="space-y-12 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 sm:space-y-0 lg:grid-cols-3 lg:gap-x-8">
 
-                                            <div class="col-span-6 sm:col-span-3">
-                                                <label for="last-name" class="block text-sm font-medium text-gray-700">Last
-                                                    name</label>
-                                                <input type="text" name="last-name" id="last-name" autocomplete="family-name"
-                                                    class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" >
-                                            </div>
+                                  @if($searchedsignatories->count() > 0)
 
-                                            <div class="col-span-6 sm:col-span-4">
-                                                <label for="email-address" class="block text-sm font-medium text-gray-700">Email
-                                                    address</label>
-                                                <input type="text" name="email-address" id="email-address" autocomplete="email"
-                                                    class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" >
-                                            </div>
+                                     @foreach($searchedsignatories as $searchedsignatory)
 
-                                            <div class="col-span-6 sm:col-span-3">
-                                                <label for="country" class="block text-sm font-medium text-gray-700">Country /
-                                                    Region</label>
-                                                <select id="country" name="country" autocomplete="country"
-                                                    class="block w-full px-3 py-2 mt-1 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" >
-                                                    <option>United States</option>
-                                                    <option>Canada</option>
-                                                    <option>Mexico</option>
-                                                </select>
-                                            </div>
+                                        <li>
+                                            <div class="space-y-4">
+                                                <button class="space-y-2 rounded-lg hover:ring-blue-500 hover:ring-4" wire:click.prevent="setsignatory({{$searchedsignatory->id}})">
+                                                    <div class="aspect-w-3 aspect-h-2">
+                                                        <img class="object-cover rounded-lg shadow-lg " src="{{asset($searchedsignatory->profile_photo_url)}}" alt="n/a">
+                                                    </div>
 
-                                            <div class="col-span-6">
-                                                <label for="street-address"
-                                                    class="block text-sm font-medium text-gray-700">Street
-                                                    address</label>
-                                                <input type="text" name="street-address" id="street-address"
-                                                    autocomplete="street-address"
-                                                    class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" >
+                                                    <div class="space-y-2">
+                                                    <div class="space-y-1 text-lg font-medium leading-6">
+                                                        <h3>{{$searchedsignatory->first_name}} {{$searchedsignatory->middle_name}}  {{$searchedsignatory->last_name}}</h3>
+                                                        <p class="text-indigo-600">Department Name</p>
+                                                    </div>
+                                                    </div>
+                                                </button>
                                             </div>
+                                        </li>
 
-                                            <div class="col-span-6 sm:col-span-3 lg:col-span-2">
-                                                <input type="submit" name="postal-code" id="postal-code"
-                                                    class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" wire:click.prevent="validateForm(1)">
-                                            </div>
-                                        </div>
-                                    </form>
+                                        @endforeach
+
+                                    @else
+
+                                        <p class="text-gray-500 text-md">wala ko may nakita. sadt</p>
+
+                                    @endif
+
+                                    <!-- More people... -->
+                                </ul>
                                 </div>
                             </div>
-                        </div>
+                            </div>
+
                     </div>
                     {{-- <div class="px-4 py-4 sm:px-6">
                         <!-- Content goes here -->

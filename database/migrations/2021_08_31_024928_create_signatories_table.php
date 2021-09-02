@@ -17,6 +17,7 @@ class CreateSignatoriesTable extends Migration
             $table->increments('id');
             $table->foreignId('disbursement_voucher_id');
             $table->foreignId('user_id');
+            $table->boolean('signed')->default(false);
             $table->timestamps();
         });
     }
