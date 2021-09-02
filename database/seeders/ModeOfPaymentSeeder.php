@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class ModeOfPaymentSeeder extends Seeder
 {
@@ -13,6 +14,14 @@ class ModeOfPaymentSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('mode_of_payments')->insert([
+            'mode_of_payment'=> 'MDS Check',
+            ]);
+            DB::table('mode_of_payments')->insert([
+                'mode_of_payment'=> 'Commercial Check ADA',
+                ]);
+                DB::table('mode_of_payments')->insert([
+                    'mode_of_payment'=> 'Others',
+                    ]);
     }
 }
