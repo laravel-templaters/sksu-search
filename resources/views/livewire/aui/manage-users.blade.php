@@ -39,7 +39,7 @@
                                 <div class="text-xs font-medium lg:text-sm">
                                     <h3 class="uppercase text-blue-53">{{$user->first_name}} {{$user->middle_name}} {{$user->last_name}}</h3>
                                     <p class="text-indigo-600">{{$user->departments->department_name}}</p>
-                                    <p class="text-indigo-600">Department Head</p>
+                                    <p class="text-indigo-600">{{$user->role->role_name}}</p>
                                 </div>
                             </div>
                         </div>
