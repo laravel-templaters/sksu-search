@@ -186,15 +186,6 @@
                                                     class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" disabled>
                                             </div>
 
-                                            <div class="col-span-6">
-                                                <label for="entity_title" class="block text-sm font-medium text-gray-700">Entity Title</label>
-                                                <input wire:model="entity_title" type="text" name="entity_title" id="entity_title" 
-                                                    class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                                                    @error('entity_title')
-                                                    <span class="text-sm text-red-600">{{$message}}</span>
-                                                    @enderror
-                                            </div>
-
                                             {{-- mode of payment --}}
                                             <div class="col-span-2">
                                                 <label for="mode_of_payment" class="block text-sm font-medium text-gray-700">Mode Of Payment</label>
@@ -225,12 +216,102 @@
                                                     <option value="2">Travel Order</option>
                                                 </select>
                                             </div>
-                                            <div class="justify-end col-span-2" >
-                                                <button class="block w-full py-2 mt-3 text-lg border-gray-300 rounded-lg shadow-sm bg-blue-54 focus:ring-indigo-500 focus:border-indigo-500" wire:click.prevent="validateForm(2)"> Proceed </button>
+
+                                            <div class="col-span-6">
+                                            <h3 class="font-bold text-md">Particular/s</h3>
+                                                <div class="grid grid-cols-9 gap-3 pt-2">
+                                                    {{-- input group start --}}
+                                                    <div class="grid grid-cols-3 col-span-9 border-2 border-gray-400 rounded-md shadow-sm ">
+                                                        <div class="col-span-3 m-2">
+                                                            <label for="first-name" class="block text-sm font-medium text-gray-700">Entry</label>
+                                                            <input type="text" wire:model="entry.0" 
+                                                                class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" >
+                                                                @error('entry.0')
+                                                                <span class="text-sm text-red-500">{{$message}}</span>
+                                                                @enderror
+                                                        </div>
+                                                        <div class="col-span-1 m-2">
+                                                            <label for="first-name" class="block text-sm font-medium text-gray-700">Responsibility Center</label>
+                                                            <input type="text" wire:model="responsibility_center.0" 
+                                                                class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                                                @error('responsibility_center.0')
+                                                                <span class="text-sm text-red-500">{{$message}}</span>
+                                                                @enderror
+                                                        </div>
+                                                        <div class="col-span-1 m-2">
+                                                            <label for="first-name" class="block text-sm font-medium text-gray-700">MFO/PAP</label>
+                                                            <input type="text" wire:model="mfo_pap.0" 
+                                                                class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                                                @error('mfo_pap.0')
+                                                                <span class="text-sm text-red-500">{{$message}}</span>
+                                                                @enderror
+                                                        </div>
+                                                        <div class="col-span-1 m-2">
+                                                            <label for="first-name" class="block text-sm font-medium text-gray-700">Amount</label>
+                                                            <input type="number" wire:model="amount.0" 
+                                                                class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                                                @error('amount.0')
+                                                                <span class="text-sm text-red-500">{{$message}}</span>
+                                                                @enderror
+                                                        </div>
+                                                    </div>
+                                                    {{-- input group end --}}
+                                                    {{-- loops HERE start --}}
+                                                    @foreach($inputs as $key => $value)
+                                                    <div class="grid grid-cols-3 col-span-8 border-2 border-gray-400 rounded-md shadow-sm ">
+                                                        <div class="col-span-3 m-2">
+                                                            <label for="first-name" class="block text-sm font-medium text-gray-700">Entry</label>
+                                                            <input type="text" wire:model="entry.{{ $value }}" 
+                                                                class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" >
+                                                                @error('entry.'.$value)
+                                                                <span class="text-sm text-red-500">{{$message}}</span>
+                                                                @enderror
+                                                        </div>
+                                                        <div class="col-span-1 m-2">
+                                                            <label for="first-name" class="block text-sm font-medium text-gray-700 truncate">Responsibility Center</label>
+                                                            <input type="text" wire:model="responsibility_center.{{ $value }}" 
+                                                                class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                                                @error('responsibility_center.'.$value)
+                                                                <span class="text-sm text-red-500">{{$message}}</span>
+                                                                @enderror
+                                                        </div>
+                                                        <div class="col-span-1 m-2">
+                                                            <label for="first-name" class="block text-sm font-medium text-gray-700">MFO/PAP</label>
+                                                            <input type="text" wire:model="mfo_pap.{{ $value }}" 
+                                                                class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                                                @error('mfo_pap.'.$value)
+                                                                <span class="text-sm text-red-500">{{$message}}</span>
+                                                                @enderror
+                                                        </div>
+                                                        <div class="col-span-1 m-2">
+                                                            <label for="first-name" class="block text-sm font-medium text-gray-700">Amount</label>
+                                                            <input type="number" wire:model="amount.{{ $value }}" 
+                                                                class="block w-full mt-1 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                                                @error('amount.'.$value)
+                                                                <span class="text-sm text-red-500">{{$message}}</span>
+                                                                @enderror
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-span-1 shadow-sm ">
+                                                        <button class="w-full h-full bg-red-600 rounded-md" wire:click.prevent="remove({{$key}})">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mx-auto text-blue-51" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                                            </svg>
+                                                        </button>
+                                                    </div>
+                                                    @endforeach
+                                                    {{-- loops HERE end --}}
+                                                    {{-- add button --}}
+                                                    <button class="col-span-3 col-start-4 m-2 text-gray-800 rounded-full hover:bg-indigo-600 bg-blue-52" wire:click.prevent="add({{$i}})"><span class="m-2 text-sm font-extrabold">ADD ENTRY</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="justify-end col-span-4 col-start-2" >
+                                            <button class="block w-full py-2 mt-3 text-lg border-gray-300 rounded-lg shadow-sm bg-blue-54 focus:ring-indigo-500 focus:border-indigo-500" wire:click.prevent="storeParticulars()"> Proceed </button>
                                                 
                                                 
                                             </div>
-                                            
                                         </div>
                                     </form>
                                 </div>

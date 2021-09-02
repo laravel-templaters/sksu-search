@@ -252,22 +252,7 @@
                             </div>
                             </div>
                             
-                            <div class="col-span-4">
-                                <label for="zip" class="block text-sm font-medium text-gray-700">
-                                    Profile photo
-                                </label>
-                                <div class="col-span-2 mt-1">
-                                    <div class="flex items-center">
-                                        <span class="overflow-hidden bg-gray-100 rounded-full h-14 w-14">
-                                            @if ($photo)
-                                                <img src="{{ $photo->temporaryUrl() }}">
-                                            @endif
-                                        </span>
-                                        <input type="file" wire:model.deffer="photo" class="px-3 py-2 ml-5 text-sm font-medium leading-4 text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"> 
-                                        
-                                    </div>
-                                </div>
-                            </div>
+                            
                         </div>
                         
                         
@@ -276,57 +261,93 @@
                         <div class="pt-8">
                         <div>
                             <h3 class="text-lg font-medium leading-6 text-gray-900">
-                            Deparment Details
+                            Work Details
                             </h3>
                             <p class="mt-1 text-sm text-gray-500">
                             Set Department, Department Position and Roles
                             </p>
                         </div>
-                        <div class="mt-6">
-                            <fieldset>
-                            <legend class="text-base font-medium text-gray-900">
-                                Deparment And Position
-                            </legend>
-                            <div class="mt-4 space-y-4">
-                                <div class="relative flex items-start">
-                                    <div class="pl-3 space-y-1 sm:col-span-2">
-                                        <label for="zip" class="block text-sm font-medium text-gray-700">
-                                            Department
-                                        </label>
-                                        <select placeholder="--Select Department--" wire:model.deffer="department_id" id="department" name="department" autocomplete="department" class="block w-full max-w-lg border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm">
-                                        @foreach ($departments as $department)
-                                        <option value="{{$department->id}}">{{$department->department_name}}</option>
-                                        @endforeach
-                                        </select>
-                                    </div>
-                                    <div class="pl-3 space-y-1 sm:col-span-2">
-                                        <label for="zip" class="block text-sm font-medium text-gray-700">
-                                            Position
-                                        </label>
-                                        {{-- postions here --}}
-                                        <select placeholder="--Select Department--" wire:model.deffer="position_id" id="position" name="department" autocomplete="department" class="block w-full max-w-lg border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm">
-                                        @foreach ($positions as $position)
-                                        <option value="{{$position->id}}">{{$position->position_name}}</option>
-                                        @endforeach
-                                        </select>
-                                        {{-- position here --}}
-                                    </div>
-                                    <div class="pl-3 space-y-1 sm:col-span-2">
-                                        <label for="zip" class="block text-sm font-medium text-gray-700">
-                                            Role
-                                        </label>
-                                        {{-- Roles here --}}
-                                        <select placeholder="--Select Department--" wire:model.deffer="role_id" id="role" name="department" autocomplete="department" class="block w-full max-w-lg border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm">
-                                        @foreach ($roles as $role)
-                                        <option value="{{$role->id}}">{{$role->role_name}}</option>
-                                        @endforeach
-                                        </select>
-                                        {{-- Roles here --}}
+                            <div class="mt-6">
+                                <fieldset>
+                                <legend class="text-base font-medium text-gray-900">
+                                    Deparment And Position
+                                </legend>
+                                <div class="mt-4 space-y-4">
+                                    <div class="relative flex items-start">
+                                        <div class="pl-3 space-y-1 sm:col-span-2">
+                                            <label for="zip" class="block text-sm font-medium text-gray-700">
+                                                Department
+                                            </label>
+                                            <select placeholder="--Select Department--" wire:model.deffer="department_id" id="department" name="department" autocomplete="department" class="block w-full max-w-lg border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm">
+                                            @foreach ($departments as $department)
+                                            <option value="{{$department->id}}">{{$department->department_name}}</option>
+                                            @endforeach
+                                            </select>
+                                        </div>
+                                        <div class="pl-3 space-y-1 sm:col-span-2">
+                                            <label for="zip" class="block text-sm font-medium text-gray-700">
+                                                Position
+                                            </label>
+                                            {{-- postions here --}}
+                                            <select placeholder="--Select Department--" wire:model.deffer="position_id" id="position" name="department" autocomplete="department" class="block w-full max-w-lg border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm">
+                                            @foreach ($positions as $position)
+                                            <option value="{{$position->id}}">{{$position->position_name}}</option>
+                                            @endforeach
+                                            </select>
+                                            {{-- position here --}}
+                                        </div>
+                                        <div class="pl-3 space-y-1 sm:col-span-2">
+                                            <label for="zip" class="block text-sm font-medium text-gray-700">
+                                                Role
+                                            </label>
+                                            {{-- Roles here --}}
+                                            <select placeholder="--Select Department--" wire:model.deffer="role_id" id="role" name="department" autocomplete="department" class="block w-full max-w-lg border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs sm:text-sm">
+                                            @foreach ($roles as $role)
+                                            <option value="{{$role->id}}">{{$role->role_name}}</option>
+                                            @endforeach
+                                            </select>
+                                            {{-- Roles here --}}
+                                        </div>
                                     </div>
                                 </div>
+                                </fieldset>
                             </div>
-                            </fieldset>
-                        </div>
+                             <div class="mt-6">
+                                <fieldset>
+                                <legend class="text-base font-medium text-gray-900">
+                                    Other Information
+                                </legend>
+                                <div class="mt-4 space-y-4">
+                                    <div class="col-span-4">
+                                        <label for="zip" class="block text-sm font-medium text-gray-700">
+                                            Profile photo
+                                        </label>
+                                        <div class="col-span-2 mt-1">
+                                            <div class="flex items-center">
+                                                <span class="overflow-hidden bg-gray-100 rounded-full h-14 w-14">
+                                                    @if ($photo)
+                                                        <img src="{{ $photo->temporaryUrl() }}">
+                                                    @endif
+                                                </span>
+                                                <input type="file" wire:model.deffer="photo" class="px-3 py-2 ml-5 text-sm font-medium leading-4 text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"> 
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-span-2">
+                                        <label class="block text-sm font-medium text-gray-700">
+                                            Employee Number/TIN
+                                        </label>
+                                        <div class="mt-1">
+                                            <input type="text" name="last_name" wire:model.deffer:="employee_number" id="last_name" autocomplete="family-name" class="block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                        </div>
+                                        @error('employee_number')
+                                        <span class="text-sm text-red-500">{{$message}}</span>
+                                        @enderror
+                                    </div>                                    
+                                </div>
+                                </fieldset>
+                            </div>
                         </div>
                     </div>
 

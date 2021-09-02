@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Secretariat;
 
 use App\Models\User;
+use App\Models\Particular;
 use Livewire\Component;
 
 class CreateDv extends Component
@@ -29,7 +30,13 @@ class CreateDv extends Component
     public $mode_of_payment;
     public $dv_type_id;
     public $dv_category_id;
-    public $entity_title;
+
+    //for particulars
+     public $entry, $responsibility_center, $mfo_pap, $amount;
+     //for dynamic input fields
+     public $updateMode = false;
+     public $inputs = [];
+     public $i = 1;
 
 
     public function render()
@@ -39,9 +46,87 @@ class CreateDv extends Component
        
     }
 
+    //dynamic input field methods START ----------
+
+    public function add($i)
+    {
+        $i = $i + 1;
+        $this->i = $i;
+        array_push($this->inputs ,$i);
+    }
+
+    public function remove($i)
+    {
+        unset($this->inputs[$i]);
+    }
+
+    private function resetInputFields(){
+        $this->entry = '';
+        $this->responsibility_center = '';
+        $this->mfo_pap = '';
+        $this->amount = '';
+    }
+      
+
+    //dynamic input field methods END -----------
+
+    //methods Store Particulars START -----------
+     public $dv_id=1;
+
+     public function storeParticulars(){
+
+                $validatedDate = $this->validate([
+                        'entry.0' => 'required',
+                        'amount.0' => 'required',
+                        'entry.*' => 'required',
+                        'amount.*' => 'required',
+                    ],
+                    [
+                        'entry.0.required' => 'Entry field is required',
+                        'amount.0.required' => 'Amount field is required',
+                        'entry.*.required' => 'Entry field is required',
+                        'amount.*.required' => 'Amount field is required',
+                    ]
+                );
+
+            foreach ($this->entry as $key => $value) {
+                //Contact::create(['name' => $this->name[$key], 'phone' => $this->phone[$key]]);
+                $particulars = new Particular;
+                $particulars->disbursement_voucher_id = $this->dv_id;
+                $particulars->entry = $this->entry[$key];
+                $particulars->responsibility_center = $this->responsibility_center[$key];
+                $particulars->mfo_pap = $this->mfo_pap[$key];
+                $particulars->amount = $this->amount[$key];
+                $particulars->save();
+            }
+
+            $this->inputs = [];
+
+            $this->resetInputFields();
+
+
+        //     uncomment this if necessary
+        
+        //     $this->alert('success', 'Successfully Added!', [
+        //         'background' => '#ccffcc',
+        //         'padding' => '0.5rem',
+        //         'position' =>  'top-end', 
+        //         'timer' =>  2500,  
+        //         'toast' =>  true, 
+        //         'text' =>  '', 
+        //         'confirmButtonText' =>  'Ok', 
+        //         'cancelButtonText' =>  'Cancel', 
+        //         'showCancelButton' =>  false, 
+        //         'showConfirmButton' =>  false, 
+        //   ]);
+     }
+
+
+    //methods Store Particulars  END-----------
+
     public function validateForm($to){
         $this->validate([
-            'entity_title'=>'required'
+          
         ]);
         switch ($to) {
             case 1:

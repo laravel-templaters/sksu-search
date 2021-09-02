@@ -29,6 +29,7 @@ class ManageUsers extends Component
     public $email;
     public $username;
     public $password;
+    public $employee_number;
     public $password_confirmation;
     public $role_id=1;
     public $department_id=1;
@@ -60,6 +61,7 @@ class ManageUsers extends Component
             'birth_day' => 'required',
             'contact_number' => 'required',
             'email' =>  'required|email|unique:users',
+            'employee_number' => 'required|unique:users',
             'username' => 'required|unique:users',
             'password' => 'required|confirmed|min:8',
             'password_confirmation' => 'required|min:8',
@@ -79,6 +81,7 @@ class ManageUsers extends Component
                 $user->birth_day = $this->birth_day;
                 $user->contact_number = $this->contact_number;
                 $user->email = $this->email;
+                $user->employee_number = $this->employee_number;
                 $user->username = $this->username;
                 $user->password = Hash::make($this->password);
                 $user->role_id =  $this->role_id;

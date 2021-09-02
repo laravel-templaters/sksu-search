@@ -13,6 +13,10 @@ class Particular extends Model
 
     use HasFactory;
 
+    protected $fillable = [
+        'disbursement_voucher-id', 'entry', 'responsibility_center','mfo_pap','amount'
+    ];
+
     public function disbursement_vouchers(){
         return $this->belongsTo('App\Models\DisbursementVoucher');
     }
